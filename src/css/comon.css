@@ -1,0 +1,190 @@
+
+.form {
+  display: flex;
+  justify-content: center;
+  /* центрує по горизонталі */
+  align-items: center;
+  /* центрує по вертикалі (якщо задаси висоту) */
+  gap: 10px;
+  /* відступ між input і кнопкою */
+  margin: 20px auto;
+  /* відступи зверху/знизу і автоматичне центрування */
+  max-width: 500px;
+  /* щоб форма не розтягувалась занадто широко */
+  height: 40px;
+}
+
+
+
+.form input,
+.btn {
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form input {
+  flex: 1;
+  border: 1px solid #ccc;
+  width: 272px;
+}
+
+.btn {
+  border: none;
+  background-color: #4e75ff;;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  width: 91px;
+}
+
+.btn:hover {
+  background-color: #303f9f;
+}
+
+.form input:hover {
+  border-color: #000;
+  outline: none;
+}
+
+.form input:focus {
+  border-color: #303f9f;
+  outline: none;
+  box-shadow: 0 0 4px rgba(63, 81, 181, 0.5);
+}
+
+
+/* .gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 40px auto;
+  max-width: 1400px;
+}
+ */
+ .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 40px auto;
+  max-width: 1400px;
+}
+
+
+
+.photo-card {
+  border: 1px solid #808080;
+  display: flex;
+  flex-direction: column;
+}
+
+.img-card {
+  width: 360px;
+  height: 200px;
+  display: block;
+}
+
+
+.photo-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  /* назва зверху, значення знизу */
+  align-items: center;
+}
+
+.label {
+  font-size: 12px;
+  color: black;
+  font-weight: bold;
+}
+
+.value {
+  font-size: 14px;
+ 
+}
+
+.sl-overlay {
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(8px);
+}
+
+
+
+
+
+.loader {
+  transform: translateZ(1px);
+  display: flex;
+  justify-content: center;    
+}
+
+.loader:after {
+  content: '$';
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 32px;
+  font-weight: bold;
+  background: #FFD700;
+  color: #DAA520;
+  border: 4px double;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .1);
+  animation: coin-flip 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+@keyframes coin-flip {
+
+  0%,
+  100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;   
+}
+
+.moreBtn {
+  width: 125px;
+}
+
+
+
