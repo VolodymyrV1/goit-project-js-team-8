@@ -16,6 +16,12 @@
   padding-bottom: 18px;
 }
 
+.header-logo-icon {
+    width: 84px;
+  height: 36px;
+
+}
+
 .menu-btn {
   width: 24px;
   height: 24px;
