@@ -7,4 +7,5 @@ import "./js/events";
 import "./js/article";
 import "./js/location";
 import "./js/footer";
-import "./js/modal_window";
+import "./js/book_modal_window";
+import "./js/contact_modal_window"
