@@ -2,37 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>goit-js-hw-12</title>
+    <title>JS-Project-Booksy-Team-8</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css" />
     <script type="module" src="./main.js"></script>
 
+
   </head>
-  <body>
-    <header class="header">
-    </header>
 
-    <main>
-      <div class="container">
-        <form class="form">
-          <label>
-            <input type="text" name="search-text" placeholder="Search images..." required>
-          </label>
-          <button class="btn searchBtn" type="submit">Search</button>
-        </form>
+    <body>
+      <load src="./partials/navbar.html" />
+      <load src="./partials/header.html" />
+      <main>
+        <load src="./partials/hero.html" />
+        <load src="./partials/books.html" />
+        <load src="./partials/feedbacks.html" />
+        <load src="./partials/events.html" />
+        <load src="./partials/article.html" />
+        <load src="./partials/location.html" />
+      </main>
+      <load src="./partials/footer.html" />
+      <load src="./partials/modal_window.html"/>
 
-        
+    </body>
 
-        <ul class="gallery"></ul>
-        <span class="loader hidden" ></span>
-        <button type="button" class="btn moreBtn hidden">Load more</button>
-
-      </div>
-
-  
-    </main>
-
- 
-  </body>
 </html>
