@@ -9,10 +9,7 @@
   flex-direction: column;
   align-items: center;
   gap: 32px;
-}
-
-.footer-navigation {
-
+ 
 }
 
 .footer-logo {
@@ -69,7 +66,7 @@
   flex: 1;
   padding: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   background-color: #dd6f30;
   color: #000;
 }
@@ -98,20 +95,19 @@
 }
 
 /* копірайт */
-.footer-divider {
-    border-top: 1px solid var(--link-color, #000); 
-    margin-top: 80px; 
-    margin-bottom: 32px; 
-    height: 0; 
-    width: 100%; 
-
+.footer-copyright {
+width: 100%;
+min-width: 320px;
+ margin-top: 80px;
+border-top: 1px solid #fceee673;
+text-align: center;
 }
 
-.footer-copy-text{
-    text-align: center; 
-    font-size: 14px; 
-    color: var(--link-color, #000); 
-    font-weight: 400;
+.copyright-text {
+ padding-top: 32px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
 }
 
 /* адаптивність */
@@ -125,15 +121,4 @@
   .footer-form {
     text-align: left;
   }
-}
-/* Корегування для мобільних пристроїв (за Mobile First) */
-@media (max-width: 767px) {
-    .copyright hr {
-        margin: 30px 0 15px 0; 
-    }
-    
-    .copyright p {
-        margin-top: 15px;
-        font-size: 12px; 
-    }
 }
