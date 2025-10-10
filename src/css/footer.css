@@ -7,4 +7,11 @@
 
 }
 
-
+ .footer-content {
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.footer-navigation {
+  gap: 32px;
+}
