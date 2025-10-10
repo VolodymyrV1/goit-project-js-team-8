@@ -1,11 +1,8 @@
-
 .footer {
   background-color: #e87d3e;
-padding-top: 80px;
-padding-bottom: 80px;
- 
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
-
 
 .footer-content {
   display: flex;
@@ -14,11 +11,14 @@ padding-bottom: 80px;
   gap: 32px;
 }
 
+.footer-navigation {
+
+}
 
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 6px;
+  margin-bottom: 32px;
   font-weight: 700;
   font-size: 1.1rem;
 }
@@ -26,7 +26,6 @@ padding-bottom: 80px;
 .logo-icon {
   fill: #000;
 }
-
 
 .footer-nav {
   list-style: none;
@@ -66,7 +65,7 @@ padding-bottom: 80px;
   margin-bottom: 12px;
 }
 
-.subscribe-form input[type="email"] {
+.subscribe-form input[type='email'] {
   flex: 1;
   padding: 10px;
   border: none;
@@ -99,19 +98,20 @@ padding-bottom: 80px;
 }
 
 /* копірайт */
-.footer hr {
-  border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
-  margin: 20px 0;
-}
-.foooter-copyright {
-    border: 1px solid var(--color-scheme-3-border);
-    padding-top: 80px;
+.footer-divider {
+    border-top: 1px solid var(--link-color, #000); 
+    margin-top: 80px; 
+    margin-bottom: 32px; 
+    height: 0; 
+    width: 100%; 
+
 }
 
-
-.footer-copy {
-  font-size: 0.85rem;
+.footer-copy-text{
+    text-align: center; 
+    font-size: 14px; 
+    color: var(--link-color, #000); 
+    font-weight: 400;
 }
 
 /* адаптивність */
@@ -125,4 +125,15 @@ padding-bottom: 80px;
   .footer-form {
     text-align: left;
   }
+}
+/* Корегування для мобільних пристроїв (за Mobile First) */
+@media (max-width: 767px) {
+    .copyright hr {
+        margin: 30px 0 15px 0; 
+    }
+    
+    .copyright p {
+        margin-top: 15px;
+        font-size: 12px; 
+    }
 }
