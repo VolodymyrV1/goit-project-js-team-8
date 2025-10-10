@@ -1,7 +1,38 @@
-<footer class="" id="footer">
+<footer class="section-footer" id="footer">
     <div class="container">
+     <svg class="booksy-logo" width="150" height="30" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Booksy Logo">
+        <use href="#icon-booksy-logo" fill="#000"></use> 
+        <text x="30" y="20" font-family="Arial, sans-serif" font-size="18" fill="#000" font-weight="700">Booksy</text>
+    </svg>
 
-    </div>
+    <nav class="footer-nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#books">Books</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li><a href="#location">Location</a></li>
+        </ul>
+    </nav>
 
-    
+    <section class="join-section">
+        <h2>Join</h2>
+        <form action="#" method="post" class="signup-form" novalidate>
+            <input 
+                type="email" 
+                name="email" 
+                placeholder="Enter your email" 
+                required 
+                aria-label="Enter your email"
+                title="Будь ласка, введіть дійсну електронну пошту (наприклад, user@domain.com)"
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" 
+            >
+            <button type="submit">Sign Up</button>
+        </form>
+        <p class="required-field-note">* Required field</p>
+    </section>
+
+    <footer class="copyright">
+        <hr>
+        <p>&copy; 2025 Booksy. All rights reserved.</p> 
+ </div>
 </footer>
