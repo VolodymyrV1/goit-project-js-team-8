@@ -1,0 +1,123 @@
+
+.footer {
+  background-color: #e87d3e;
+padding-top: 80px;
+padding-bottom: 80px;
+ 
+}
+
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+/* логотип */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.logo-icon {
+  fill: #000;
+}
+
+/* навігація */
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #000;
+  transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+  opacity: 0.7;
+}
+
+/* форма */
+.footer-form {
+  width: 100%;
+  max-width: 300px;
+  text-align: left;
+}
+
+.footer-form h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.subscribe-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.subscribe-form input[type="email"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #dd6f30;
+  color: #000;
+}
+
+.subscribe-form input::placeholder {
+  color: #000;
+  opacity: 0.7;
+}
+
+.subscribe-form button {
+  padding: 10px 16px;
+  border: 1px solid #000;
+  background: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.subscribe-form button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.required-text {
+  font-size: 0.8rem;
+}
+
+/* роздільна лінія і копірайт */
+.footer hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+}
+
+/* адаптивність */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .footer-form {
+    text-align: left;
+  }
+}

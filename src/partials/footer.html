@@ -1,7 +1,39 @@
-<footer class="" id="footer">
-    <div class="container">
-
+<footer class="footer" id="footer">
+  <div class="footer-container container">
+    
+    <div class="footer-logo">
+     <a class="footer-logo" href="./index.html">
+      <svg class="header-logo-icon" width="84" height="36">
+        <use href="/img/symbol-defs.svg#icon-AlternateFalse"></use>
+      </svg>
+    </a>
     </div>
 
-    
+    <!-- navigation links -->
+    <ul class="footer-nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#feedback">Feedback</a></li>
+      <li><a href="#location">Location</a></li>
+    </ul>
+
+    <!-- subscription form -->
+    <div class="footer-form">
+      <h3>Join</h3>
+      <form action="#" method="post" class="subscribe-form">
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+          pattern="^\w+([\.-]?\w+)*@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+        />
+        <button type="submit">Sign Up</button>
+      </form>
+      <p class="required-text">* Required field</p>
+    </div>
+  </div>
+
+  <hr />
+  <p class="footer-copy">© 2025 Booksy. All rights reserved.</p>
 </footer>
