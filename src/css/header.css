@@ -1,0 +1,89 @@
+.hero {
+    background-color: blue;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-nav-list {
+    display: none;
+}
+
+.header-logo {
+    display: inline-block;
+
+    padding-top: 18px;
+    padding-bottom: 18px;
+    transition: background-color 250ms ease-in-out, border-radius 250ms ease-in-out;
+}
+.header-logo-icon {
+    display: block;
+    width: 84px;
+    height: 36px;
+    transition: fill 250ms ease-in-out;
+
+
+}
+
+.header-logo:focus,
+.header-logo:hover {
+    background-color: black;
+    border-radius: 5px;
+   
+}
+.header-logo:hover .header-logo-icon,
+.header-logo:focus .header-logo-icon {
+    fill: #fff;
+}
+
+
+
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: none;
+    background-color: transparent;
+}
+
+.menu-icon {
+    width: 24px;
+    height: 24px;
+}
+
+@media screen and (min-width: 768px) {
+    .menu-btn {
+        display: none;
+    }
+
+    .header-nav-list {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .header-nav-link {
+        display: inline-block;
+        font-size: 16px;
+
+
+        padding-top: 24px;
+        padding-bottom: 24px;
+
+        transition: opacity 250ms;
+    }
+
+    .header-nav-link:hover,
+    .header-nav-link:focus {
+        opacity: 0.5;
+    }
+
+
+}
