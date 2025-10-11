@@ -1,0 +1,164 @@
+/* ===== HERO SECTION ===== */
+.hero {
+  background-color: #fceee6;
+  padding: 20px 0;
+}
+
+.hero .container {
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* ==== SLIDER ==== */
+.hero_slider {
+  position: relative;
+}
+
+.hero_slide {
+  list-style: none;
+  display: none;
+  transition: opacity 0.4s ease;
+}
+
+.hero_slide.active {
+  display: block;
+}
+.hero_banner {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hero_image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==== OVERLAY ==== */
+.hero_overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 90px;
+  padding-left: 16px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.15) 80%
+  );
+  max-width: 320px;
+}
+
+.hero_offer {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.hero_btn {
+  display: inline-block;
+  background-color: #e15d05;
+  align-items: center;
+  justify-content: center;
+  width: 117px;
+  height: 20px;
+  border-radius: 2.06px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero_btn:hover {
+  background-color: #b44f15;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+.btn_text {
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 8.25px;
+}
+/* ==== HERO BOTTOM ==== */
+.hero_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.hero_title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+}
+
+.hero_nav {
+  display: flex;
+  gap: 8px;
+}
+
+.hero_nav button {
+  background-color: #e15d05;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.hero_nav button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ================================================= */
+/* ============== TABLET VERSION =================== */
+/* ================================================= */
+@media screen and (min-width: 768px) {
+  .hero_overlay {
+    max-width: 420px;
+    padding: 60px;
+  }
+
+  .hero_offer {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .hero_title {
+    font-size: 28px;
+  }
+
+  .hero_nav button {
+    padding: 10px;
+  }
+}
+
+/* ================================================= */
+/* ============== DESKTOP VERSION ================== */
+/* ================================================= */
+@media screen and (min-width: 1440px) {
+  .hero_overlay {
+    max-width: 600px;
+    padding: 80px;
+  }
+
+  .hero_offer {
+    font-size: 52px;
+  }
+
+  .hero_title {
+    font-size: 36px;
+  }
+
+  .hero_btn {
+    font-size: 18px;
+    padding: 12px 32px;
+  }
+}
