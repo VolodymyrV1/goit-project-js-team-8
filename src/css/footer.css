@@ -5,52 +5,55 @@
 }
 
 .footer-content {
+  gap: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
 }
+
+
 
 .footer-logo {
   display: flex;
   align-items: center;
-  padding-bottom: 32px;
-  font-weight: 700;
-  font-size: 1.1rem;
+  transition: background-color 250ms ease-in-out, border-radius 250ms ease-in-out;
 }
 
 
-  .footer-logo:focus,
-.footer-logo:hover {
-    background-color: black;
-    border-radius: 5px;
-   
-}
+
+
 .footer-logo:hover .footer-logo-icon,
 .footer-logo:focus .footer-logo-icon {
     fill: #fff;
+     background-color: black;
+    border-radius: 4px;
 }
 
-
 .footer-nav {
+  padding-top:32px;
+}
+
+.footer-nav-list {
   list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 32px;
 }
 
-.footer-nav a {
+.footer-nav-link {
   text-decoration: none;
   color: #000;
-  transition: opacity 0.3s;
+  transition: opacity 250ms;
 }
 
-.footer-nav a:hover {
-  opacity: 0.7;
+.footer-nav-link:hover,
+.footer-nav-link:focus {
+  opacity: 0.5;
 }
+
+
+
 
 /* форма */
 .footer-form {
@@ -72,17 +75,28 @@
   margin-bottom: 12px;
 }
 
-.subscribe-form input[type='email'] {
+
+
+
+
+
+
+
+
+.subscribe-form-imput {
   padding: 12px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   border: none;
   border-radius: 8px;
+  font-weight: 400;
   font-size: 16px;
+  line-height: 150%;
   background-color: #d68953;
+  outline: none;
 }
 
-.subscribe-form input::placeholder {
-  color: rgba(68, 68, 68, 0.8);
+.subscribe-form-input::placeholder {
+  color: rgba(56, 56, 56, 0.8);
   opacity: 1;
   border-radius: 4px;
 }
@@ -93,13 +107,13 @@
   padding: 12px 24px;
   background: transparent;
   font-size: 16px;
-  cursor: pointer;
   transition: background-color 0.3s;
   border: 1px solid;
 }
 
 .subscribe-form button:hover {
   background-color: rgba(0, 0, 0, 0.1);
+  fill: white;
 }
 
 .required-text {
@@ -107,6 +121,7 @@
 }
 
 /* копірайт */
+
 .footer-copyright {
   width: 100%;
   max-width: 343px;
@@ -124,59 +139,53 @@
 
 /* Tablet */
 
-
-
 @media only screen and (min-width: 768px) {
-  .container {
-    max-width: 768px;
-    padding: 0 64px;
-  }
-
-
   .footer {
-   padding-bottom: 80px;
-   padding-top:80px ;
+    padding: 80px 64px;
     box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   }
 
-  
-
   .footer-logo {
-  justify-content: center;
+    justify-content: center;
   }
 
-
-
-
-
-  .footer-nav {
+  .footer-nav-list {
+    padding: 0;
     flex-direction: row;
-    gap: 24px;
-
-    flex-grow: 1;
-    justify-content: center;
   }
 
   .footer-form {
     width: auto;
-    text-align: left;
   }
 
-  .subscribe-form {
-    gap: 8px;
-    width: auto;
-  }
-
-  .subscribe-form input[type='email'] {
-    width: 250px;
+  .subscribe-form-input {
+    width: 278px;
     flex-grow: 0;
   }
 
   .footer-copyright {
-    /* Центруємо та розширюємо копірайт-блок */
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 60px;
+    max-width: 768px;
   }
+}
+
+
+@media only screen and (min-width: 1440px) {
+
+
+
+
+.footer-content {
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+
+}
+ 
+.footer-logo {
+  justify-content: start;
+}
+
+.footer-copyright {
+  max-width: 1440px;
+}
 }
