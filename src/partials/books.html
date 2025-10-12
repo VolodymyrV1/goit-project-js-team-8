@@ -1,6 +1,22 @@
 <section class="" id="books">
-    <div class="container">
+  <div class="container books-wraper">
+    <h2 class="books-title visually-hidden">Trending books</h2>
 
+    <!-- Категорії -->
+    <div class="category-wraper">
+      <div class="category-header-wraper">
+        <h3 class="category-title">Books</h3>
+        <p id="category-count" class="category-count">Showing 0 of 0</p>
+      </div>
+      <div class="category-list-wraper">
+        <ul id="category-list" class="category-list"></ul>
+      </div>
     </div>
 
+    <!-- Список книг -->
+    <div class="list-wraper"><ul id="books-list" class="books-list"></ul></div>
+
+    <!-- Кнопка підгрузки -->
+    <button id="load-more" style="display: none">Load more</button>
+  </div>
 </section>

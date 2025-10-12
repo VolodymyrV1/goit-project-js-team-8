@@ -1,0 +1,138 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.books-wraper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  padding-top: 32px;
+}
+
+.category-header-wraper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 308px;
+  height: 30px;
+  margin-right: 24px;
+  margin-bottom: 24px;
+}
+
+.category-header-wraper h3 {
+}
+
+/* .category-item {
+  padding: 8px 0px;
+  width: 308px;
+  height: 43px;
+} */
+
+.list-wraper {
+  display: flex;
+  max-width: 100%;
+}
+
+.books-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 24px;
+  justify-content: space-between;
+}
+
+.books-item-wraper {
+  display: flex;
+  max-width: calc((100% - 72px) / 4);
+
+  width: 227px;
+  height: 439px;
+  min-width: 221px;
+}
+
+.books-img-wraper {
+  border-radius: 8px;
+  width: 227px;
+  height: 322px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.book-img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.books-info-wraper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+
+  text-transform: capitalize;
+}
+
+.books-text-wraper {
+  width: 175px;
+  height: 45px;
+}
+
+.books-text-wraper h4 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  text-transform: capitalize;
+  color: var(--color-scheme-2-text);
+
+  overflow: hidden; /* приховуємо текст, що не поміщається */
+  text-overflow: ellipsis; /* додаємо три крапки в кінці обрізаного тексту */
+  white-space: nowrap; /* текст в один рядок */
+}
+
+.books-text-wraper p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: black;
+}
+
+.books-price-wraper {
+}
+
+.button-wraper button {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 8px 20px;
+  width: 227px;
+  height: 40px;
+}
+
+.books-button {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: black;
+}
+
+.category-item.active {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
