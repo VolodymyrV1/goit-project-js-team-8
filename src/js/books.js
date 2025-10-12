@@ -16,43 +16,52 @@ export async function loadCategories() {
 
     let categories = response.data;
 
+    // сортуємо категорії за алфавітом
     categories.sort((a, b) => a.list_name.localeCompare(b.list_name));
 
+    // додаємо пункт "All categories" на початок списку
     const allCategories = [
       { list_name: 'All categories' },
       ...categories.filter(cat => cat.list_name && cat.list_name.trim() !== ''),
     ];
 
+    // створюємо розмітку категорій
     const markup = allCategories
       .map(({ list_name }) => `<li class="category-item">${list_name}</li>`)
       .join('');
 
-    categoryListEl.insertAdjacentHTML('beforeend', markup);
+    // очищуємо список перед вставкою (щоб не дублювалось)
+    categoryListEl.innerHTML = markup;
 
+    // робимо першу категорію активною
     const firstCategory = categoryListEl.querySelector('.category-item');
     if (firstCategory) firstCategory.classList.add('active');
 
-    // 📚 Вибір категорії
+    // Вибір категорії
     categoryListEl.addEventListener('click', e => {
       const li = e.target.closest('.category-item');
       if (!li) return;
 
+      // прибираємо активний стан у всіх
       categoryListEl
         .querySelectorAll('.category-item')
         .forEach(item => item.classList.remove('active'));
+
+      // додаємо активний стан до натиснутої
       li.classList.add('active');
 
       const category = li.textContent;
 
+      // завантажуємо книги вибраної категорії
       loadBooksByCategory(category);
 
-      // 🟣 Автоматично закриваємо список на мобільному
+      // Автоматично закриваємо список на мобільному після вибору
       if (window.innerWidth < 768) {
         categoryListEl.classList.remove('show');
       }
     });
 
-    // 📂 Кнопка розгортання категорій (мобільна)
+    // Кнопка розгортання категорій (мобільна версія)
     const dropdownBtn = document.querySelector('.dropdown-btn');
 
     if (dropdownBtn && categoryListEl) {
@@ -60,7 +69,7 @@ export async function loadCategories() {
         categoryListEl.classList.toggle('show');
       });
 
-      // При зміні розміру вікна — скидаємо стан (щоб не зависло при ресайзі)
+      // При зміні ширини вікна — скидаємо стан (щоб не зависло при ресайзі)
       window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
           categoryListEl.classList.remove('show');
@@ -68,10 +77,10 @@ export async function loadCategories() {
       });
     }
 
-    // 📖 Завантажуємо всі книги за замовчуванням
+    // Завантажуємо всі книги за замовчуванням
     loadBooksByCategory('All categories');
   } catch (error) {
-    console.error('Error loading categories:', error);
+    console.error('Помилка при завантаженні категорій:', error);
   }
 }
 
@@ -112,9 +121,10 @@ async function loadBooksByCategory(category) {
     const visibleBooks = books.slice(0, visibleCount);
     booksListEl.innerHTML = '';
 
+    // формуємо розмітку книг
     const markup = visibleBooks
       .map(book => {
-        const title = book.title ? book.title.toLowerCase() : 'без назви';
+        const title = book.title ? book.title.toLowerCase() : 'без назви'; // 🟢 текст малими літерами
         const author = book.author
           ? book.author.toLowerCase()
           : 'невідомий автор';
@@ -149,11 +159,12 @@ async function loadBooksByCategory(category) {
 
     booksListEl.insertAdjacentHTML('beforeend', markup);
 
+    // оновлюємо лічильник
     if (catagoryCountEl) {
-      catagoryCountEl.textContent = `Showing ${visibleBooks.length} of ${books.length}`;
+      catagoryCountEl.textContent = `Показано ${visibleBooks.length} з ${books.length}`;
     }
   } catch (error) {
-    console.error('Error loading books:', error);
+    console.error('Помилка при завантаженні книг:', error);
   }
 }
 
