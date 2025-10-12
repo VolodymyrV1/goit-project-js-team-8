@@ -2,6 +2,11 @@ const heroSwiper = new Swiper('#hero-swiper', {
   slidesPerView: 1,
   loop: false,
   speed: 600,
+  allowTouchMove: false,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
   on: {
     slideChange: updateHeroNavButtons,
   },
@@ -16,38 +21,10 @@ heroNext.addEventListener('click', () => heroSwiper.slideNext());
 function updateHeroNavButtons() {
   heroPrev.disabled = heroSwiper.isBeginning;
   heroNext.disabled = heroSwiper.isEnd;
+
+  heroPrev.classList.toggle('disabled', heroPrev.disabled);
+  heroNext.classList.toggle('disabled', heroNext.disabled);
 }
 
 updateHeroNavButtons();
-
-document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelectorAll('.hero_slide');
-  const prevBtn = document.getElementById('hero-prev');
-  const nextBtn = document.getElementById('hero-next');
-  let currentIndex = 0;
-
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.style.display = i === index ? 'block' : 'none';
-    });
-
-    prevBtn.disabled = index === 0;
-    nextBtn.disabled = index === slides.length - 1;
-  }
-
-  showSlide(currentIndex);
-
-  prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      showSlide(currentIndex);
-    }
-  });
-
-  nextBtn.addEventListener('click', () => {
-    if (currentIndex < slides.length - 1) {
-      currentIndex++;
-      showSlide(currentIndex);
-    }
-  });
-});
+console.log('Swiper initialized:', heroSwiper);
