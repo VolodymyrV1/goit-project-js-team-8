@@ -99,10 +99,6 @@
   line-height: 150%;
   text-transform: capitalize;
   color: var(--color-scheme-2-text);
-
-  overflow: hidden; /* приховуємо текст, що не поміщається */
-  text-overflow: ellipsis; /* додаємо три крапки в кінці обрізаного тексту */
-  white-space: nowrap; /* текст в один рядок */
 }
 
 .books-text-wraper p {
@@ -111,6 +107,13 @@
   font-size: 14px;
   line-height: 150%;
   color: black;
+}
+
+.books-text-wraper p,
+.books-text-wraper h4 {
+  overflow: hidden; /* приховуємо текст, що не поміщається */
+  text-overflow: ellipsis; /* додаємо три крапки в кінці обрізаного тексту */
+  white-space: nowrap; /* текст в один рядок */
 }
 
 .books-price-wraper {
