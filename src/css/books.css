@@ -1,0 +1,235 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 375px) {
+  .books-wraper {
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .category-header-wraper {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    width: 343px;
+    height: 30px;
+  }
+
+  .category-list-wraper {
+    margin-bottom: 24px;
+  }
+
+  .books-wraper {
+    display: flex;
+  }
+
+  /* ------------------------test-------------------------------  */
+  .category-list {
+    display: none; /* по умолчанию скрыт */
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 8px;
+    width: 200px;
+    z-index: 100;
+    flex-direction: column;
+  }
+
+  .category-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .category-item:last-child {
+    border-bottom: none;
+  }
+
+  .dropdown-btn {
+    display: block; /* показываем кнопку */
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+
+  /* активное состояние — когда категории раскрыты */
+  .category-list.show {
+    display: flex; /* показываем категории */
+  }
+}
+
+/* ---------------------------test------------------------- */
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1440px) {
+  .books-wraper {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  .category-header-wraper {
+    width: 308px;
+
+    margin-right: 24px;
+  }
+
+  .category-header-wraper h3 {
+  }
+
+  .category-item {
+    padding: 8px 0px;
+    width: 308px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+  }
+
+  .dropdown-btn {
+    display: none; /* ховаємо кнопку */
+  }
+
+  .category-list {
+    position: static; /* звичайний потік */
+    display: flex; /* або inline-block, якщо потрібно */
+    flex-wrap: wrap; /* якщо багато елементів */
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    width: auto;
+    border: none;
+    margin: 0;
+    background: transparent;
+    flex-direction: column;
+  }
+
+  .category-item {
+    padding: 0;
+  }
+
+  .category-list-wraper:hover .category-list {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .list-wraper {
+    display: flex;
+    max-width: 100%;
+  }
+
+  .books-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 24px;
+    justify-content: space-between;
+  }
+
+  .books-item-wraper {
+    display: flex;
+    max-width: calc((100% - 72px) / 4);
+
+    width: 227px;
+    height: 439px;
+    min-width: 221px;
+  }
+
+  .books-img-wraper {
+    border-radius: 8px;
+    width: 227px;
+    height: 322px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .book-img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .books-info-wraper {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    text-transform: capitalize;
+  }
+
+  .books-text-wraper {
+    width: 175px;
+    height: 45px;
+  }
+
+  .books-text-wraper h4 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: var(--color-scheme-2-text);
+  }
+
+  .books-text-wraper p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: black;
+  }
+
+  .books-text-wraper p,
+  .books-text-wraper h4 {
+    overflow: hidden; /* приховуємо текст, що не поміщається */
+    text-overflow: ellipsis; /* додаємо три крапки в кінці обрізаного тексту */
+    white-space: nowrap; /* текст в один рядок */
+  }
+
+  .books-price-wraper {
+  }
+
+  .button-wraper button {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 8px 20px;
+    width: 227px;
+    height: 40px;
+  }
+
+  .books-button {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: black;
+  }
+
+  .category-item.active {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+}
