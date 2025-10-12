@@ -1,0 +1,261 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+/* Common styles */
+@import url('./reset.css');
+@import url('./base.css');
+@import url('./container.css');
+
+
+/* Sections style */
+@import url('./navbar.css');
+@import url('./header.css');
+@import url('./hero.css');
+@import url('./books.css');
+@import url('./feedbacks.css');
+@import url('./events.css');
+@import url('./location.css');
+@import url('./footer.css');
+@import url('./book_modal_window.css');
+@import url('./contact_modal_window.css');
+
+:root {
+  --color-bg: #fceee6;
+  --color-text: #0b0500;
+}
+
+body {
+font-family: "Rubik", sans-serif;
+background-color: #fceee6;
+color: #0b0500;
+}
+
+/* ====RESET====*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+*, 
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+   
+a {
+text-decoration: none;
+color: inherit;
+}
+
+ul,
+ol {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+address {
+font-style: normal;
+}
+
+/* Мобільна (основна) */
+
+.location {
+display: flex;
+align-items: center;
+justify-content: flex-start;
+flex-direction: column;
+gap: 32px;
+padding: 64px 16px;
+width: 100%;
+max-width: 375px;
+margin: 0 auto;
+}
+.location__container {
+  display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+flex-direction: column;
+gap: 32px;
+width: 343px;
+min-height: 479px;
+}
+.location__label {
+  display: flex;
+align-items: center;
+justify-content: flex-start;
+flex-direction: row;
+width: 69px;
+height: 24px;
+font-weight: 600;
+font-size: 16px;
+line-height: 1.5;
+text-transform: capitalize;
+}
+.location__title {
+font-weight: 600;
+font-size: clamp(32px, 8vw, 48px);
+line-height: 1.2;
+letter-spacing: -0.01em;
+}
+.location__text {
+font-weight: 400;
+font-size: 18px;
+line-height: 1.5;
+}
+.location__list {
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+flex-direction: column;
+gap: 24px;
+padding: 8px 0px;
+width: 343px;
+min-height: 244px;
+}
+.location__item {
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+flex-direction: row;
+gap: 16px;
+width: 343px;
+height: auto;
+}
+.location__text-content {
+display: flex;
+flex-direction: column; 
+flex-grow: 1;
+}
+
+.location__address {
+margin-top: -2px;
+}
+.location__icon {
+flex-shrink: 0;
+fill: #0b0500;
+}
+.location__label-text {
+font-weight: 400;
+font-size: 20px;
+line-height: 1.4;
+letter-spacing: -0.01em;
+}
+.location__link {
+font-weight: 400;
+font-size: 16px;
+line-height: 1.5;
+text-decoration: underline;
+text-decoration-skip-ink: none;
+}
+.location__map iframe {
+width: 100%;
+max-width: 343px;
+height: 395px;
+border: none;
+box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.location__item:nth-child(1),
+.location__item:nth-child(2) {
+align-items: center; 
+}
+
+/* Планшет */
+@media (min-width: 768px) {
+.location {
+gap: 80px;
+padding: 64px 32px;
+width: 100%;
+max-width: 768px;
+height: 847px;
+}
+.location__container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-areas:
+"content contacts"
+"map map";
+width: 704px;
+height: auto;
+}
+.location__content {
+grid-area: content;
+}
+.location__list {
+grid-area: contacts;
+width: 100%; 
+height: auto;
+}
+.location__item {
+width: 100%;
+align-items: flex-start;
+flex-wrap: wrap;
+height: auto;
+}
+.location__map {
+grid-area: map;
+width: 100%;
+height: 395px;
+}
+
+.location__map iframe { 
+width: 100%;
+max-width: none;
+height: 100%;
+}
+}
+
+/* Десктоп */
+@media (min-width: 1440px) {
+.location {
+gap: 80px;
+padding: 64px;
+width: 100%;
+max-width: 1440px;
+height: 1232px;
+}
+.location__container {
+grid-template-columns: 1fr 1fr; 
+grid-template-areas:
+"content contacts"
+"map map";
+gap: 80px;
+width: 1312px;
+height: auto;
+}
+.location__content {
+grid-area: content;
+}
+.location__list {
+grid-area: contacts;
+width: 100%;
+height: auto;
+}
+.location__item {
+width: 100%;
+align-items: flex-start;
+flex-wrap: wrap;
+height: auto;
+}
+.location__map { 
+grid-area: map;
+width: 100%;
+height: 738px;
+}
+
+.location__map iframe {
+width: 100%;
+height: 100%;
+max-width: none;
+}
+}
+
+
