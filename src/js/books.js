@@ -125,7 +125,7 @@ async function loadBooksByCategory(category) {
 
         return `
           <li class="books-item-wraper">
-            <div class="book-item-сontainer">
+            <div class="book-item-container">
               <div class="books-img-wraper">
                 <img src="${imageUrl}" alt="${title}" class="books-image"/>
               </div>
