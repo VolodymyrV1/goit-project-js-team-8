@@ -159,6 +159,7 @@
  
   .footer-logo {
     justify-content: center;
+    width: fit-content;
   }
 
   .footer-nav-list {
