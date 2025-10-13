@@ -46,7 +46,15 @@
   aspect-ratio: 343 / 248;
   overflow: hidden;
   border-radius: 16px;
-  border: 1px solid #ead9cc;
+}
+
+.article__media::after{
+  content: "";
+  position: absolute;
+  inset: 0;                      
+  border: 1px solid #ead9cc;      
+  border-radius: inherit;         
+  pointer-events: none;         
 }
 
 .article__media>picture {
