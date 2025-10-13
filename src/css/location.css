@@ -160,6 +160,7 @@ grid-template-areas:
 column-gap: 80px;
 height: auto;
 margin-bottom: 80px;
+width: 100%;
 }
 .location__content {
 grid-area: content;
