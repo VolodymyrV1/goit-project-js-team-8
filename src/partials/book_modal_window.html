@@ -6,17 +6,78 @@
           <use href="/img/symbol-defs.svg#icon-Vector"></use>
         </svg>
       </button>
-      <div class="book-img"></div>
-      <div class="book-crd-txt"></div>
+      <div class="error">
+        <p class="error-txt">Sorry, not found ...</p>
+      </div>
+      <div class="book-img">
+        <img class="image" width="309" height="467" />
+      </div>
+      <div class="book-crd-txt">
+        <h2 class="book-crd-title"></h2>
+        <p class="book-crd-author"></p>
+        <p class="book-crd-price"></p>
+      </div>
       <div class="crd-stable-btns">
         <div class="count-block">
           <button class="minus" type="button">-</button>
-          <div class="div-count"></div>
+          <div class="div-count">
+            <p class="txt-count"></p>
+          </div>
           <button class="plus" type="button">+</button>
         </div>
         <button class="add-btn" type="button">Add To Cart</button>
-        <button class="buy-btn" type="button">Buy Now</button>
+        <button class="buy-btn" type="submit">Buy Now</button>
       </div>
+      <ul class="accordion-container">
+        <li class="ac li-ac details">
+          <h3 class="ac-title">
+            Details
+            <span class="icon-ac-bloc">
+              <svg class="icon-ac-down" width="14" height="8">
+                <use href="/img/symbol-defs.svg#icon-ac-down"></use>
+              </svg>
+            </span>
+          </h3>
+          <div class="ac-panel content-ac">
+            <p class="ac-text txt-details">None information</p>
+          </div>
+        </li>
+        <li class="ac li-ac">
+          <h3 class="ac-title">
+            Shipping
+            <span class="icon-ac-bloc">
+              <svg class="icon-ac-down" width="14" height="8">
+                <use href="/img/symbol-defs.svg#icon-ac-down"></use>
+              </svg>
+            </span>
+          </h3>
+          <div class="ac-panel">
+            <p class="ac-text">
+              We ship across the United States within 2–5 business days. All
+              orders are processed through USPS or a reliable courier service.
+              Enjoy free standard shipping on orders over $50.
+            </p>
+          </div>
+        </li>
+        <li class="ac li-ac">
+          <h3 class="ac-title">
+            Returns
+            <span class="icon-ac-bloc">
+              <svg class="icon-ac-down" width="14" height="8">
+                <use href="/img/symbol-defs.svg#icon-ac-down"></use>
+              </svg>
+            </span>
+          </h3>
+          <div class="ac-panel">
+            <p class="ac-text">
+              You can return an item within 14 days of receiving your order,
+              provided it hasn’t been used and is in its original condition. To
+              start a return, please contact our support team — we’ll guide you
+              through the process quickly and hassle-free.
+            </p>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </section>

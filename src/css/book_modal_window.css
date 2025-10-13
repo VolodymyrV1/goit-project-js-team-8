@@ -1,7 +1,3 @@
-/* .hidden {
-  display: none;
-} */
-
 .modal_back {
   background: rgba(1, 0, 0, 0.25);
   position: fixed;
@@ -13,20 +9,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 250ms ease-in-out;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal_back.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .container.modal {
   border-radius: 16px;
   position: absolute;
   background-color: #fceee6;
-  padding: 16px;
+  padding: 64px 16px;
   display: flex;
   flex-direction: column;
+  overflow: auto;
+  max-height: calc(100vh - 64px);
+  scrollbar-width: none;
 }
 
 .close-btn {
+  z-index: 1;
+  position: absolute;
   align-self: flex-end;
+  top: 16px;
   width: 32px;
   height: 32px;
   display: flex;
@@ -37,29 +49,65 @@
   margin-bottom: 16px;
 }
 
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: #fceee6;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.error.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 .icon-Vector {
   fill: #0b0500;
 }
 
 .book-img {
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 24px;
   width: 309px;
   height: 467px;
-  margin: 0 auto;
-  border-radius: 5%;
-  overflow: hidden;
+}
+
+.image {
+  border-radius: 5px;
 }
 
 .book-crd-title {
   margin-bottom: 8px;
 }
 
-.book-crd-txt {
+.book-crd-author {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
   margin-bottom: 8px;
 }
 
-.book-crd-price {
+.book-crd-txt {
   margin-bottom: 24px;
+}
+
+.book-crd-price {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: -0.01em;
 }
 
 .count-block {
@@ -126,4 +174,36 @@
   width: 100%;
   height: 48px;
   background-color: transparent;
+  margin-bottom: 32px;
+}
+
+.icon-ac-down {
+  fill: #0b0500;
+}
+
+.rotate {
+  transform: rotate(180deg);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ac-trigger::after {
+  content: none !important;
+}
+
+.ac-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.ac.li-ac.is-active .ac-panel {
+  border-top: 1px solid rgba(11, 5, 0, 0.15);
+  width: 100%;
+  height: 59px;
+  padding: 16px 0px;
+  background-color: transparent;
+  margin: 0;
 }
