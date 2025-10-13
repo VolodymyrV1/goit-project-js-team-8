@@ -4,6 +4,7 @@
   min-width: 320px;
   margin: 0 auto;
   padding: 0 16px;
+  box-sizing: border-box;
 }
 
 /* Styles for Mobile deviіу with 375px */
@@ -29,3 +30,4 @@
     padding: 0 64px;
   }
 }
+

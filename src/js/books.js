@@ -142,7 +142,7 @@ async function loadBooksByCategory(category) {
           <li class="books-item-wraper">
             <div class="book-item-container">
               <div class="books-img-wraper">
-                <img src="${imageUrl}" alt="${title}" class="books-ima"/>
+                <img src="${imageUrl}" alt="${title}" class="books-img"/>
               </div>
               <div class="books-info-wraper">
                 <div class="books-text-wraper">
@@ -177,3 +177,5 @@ async function loadBooksByCategory(category) {
 document.addEventListener('DOMContentLoaded', () => {
   loadCategories();
 });
+
+
