@@ -16,6 +16,7 @@
   display: flex;
   align-items: center;
   transition: background-color 250ms ease-in-out, border-radius 250ms ease-in-out;
+  
 }
 
 
@@ -159,8 +160,11 @@
  
   .footer-logo {
     justify-content: center;
-    
+    cursor:default;
   }
+  .footer-logo-icon  {
+    cursor: pointer;
+}
 
   .footer-nav-list {
     padding: 0;
