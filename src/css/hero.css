@@ -168,14 +168,20 @@
     max-width: 560px;
     order: 1;
   }
+
+  .hero_bottom {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+  }
   .hero_nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
     gap: 24px;
-    order: 2;
-    align-content: flex-start;
   }
-  .hero_nav button {
-    padding: 10px;
-  }
+
   .hero_btn {
     margin-bottom: 32px;
     width: 164px;
