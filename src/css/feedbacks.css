@@ -1,4 +1,3 @@
-
 #feedbacks {
   background: #FCEEE6;
   padding: 64px 0; 
@@ -22,11 +21,15 @@
 }
 
 .section-subtitle {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 18px;
-  color: #333;
-  margin-bottom: 80px; 
+  line-height: 150%;
+  letter-spacing: 0;
+  color: #1C1C1C;
+  margin-bottom: 80px;
   max-width: 100%;
-  line-height: 1.3;
   display: -webkit-box;
   -webkit-line-clamp: 2; 
   -webkit-box-orient: vertical;
@@ -34,18 +37,20 @@
   text-overflow: ellipsis;
 }
 
+
 .feedback-cards {
   display: flex;
   gap: 24px;
   justify-content: center;
-  margin: 0 auto;
+  margin-left: 0; 
+  margin-right: 0;
 }
 
 .card {
   width: 421px;
   height: 217px;
   padding: 32px;
-  border-radius: 0; 
+  border-radius: 12px; 
   border: 1px solid #ddd;
   background: #FCEEE6;
   box-sizing: border-box;
@@ -171,7 +176,6 @@
   }
 
   .section-title {
-    font-size: 24px;
     white-space: normal !important;
     text-decoration: none !important;
     border-bottom: none !important;
@@ -195,14 +199,19 @@
     flex-direction: column;
     gap: 24px;
     align-items: center;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .card {
-    width: 327px;
-    height: auto; 
+    width: 100%;
+    max-width: 341px;
+    height: auto;
     padding: 32px;
     justify-content: flex-start;
     margin-bottom: 24px;
+    border-radius: 12px;
+    box-sizing: border-box;
   }
 
   .feedback-text {
@@ -228,7 +237,7 @@
   }
 
   .dot {
-    border-radius: 0;
+    border-radius: 50%; /* поправлено на круглые точки */
   }
 
   .arrow {
@@ -239,8 +248,20 @@
   }
 }
 
+/* Гумовая ширина от 320 до 375 */
+@media (max-width: 375px) {
+  .card {
+    width: 100%;
+    max-width: 375px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+}
+
 /* Планшет max-width 768 */
-@media (max-width: 768px) {
+@media (min-width: 376px) and (max-width: 768px) {
   #feedbacks {
     padding: 60px 0;
   }
@@ -272,6 +293,7 @@
     margin-bottom: 24px;
     scroll-snap-align: start;
     justify-content: flex-start;
+    border-radius: 12px;
   }
 
   .dots {
@@ -287,4 +309,3 @@
     gap: 16px;
   }
 }
-
