@@ -11,14 +11,14 @@ const httpBookId = async id => {
   return response;
 };
 
-const loadMoreBtn = document.querySelector('#load-more');
+const loader = document.querySelector('.loader-back');
+const loadMoreBtn = document.querySelector('.books-button');
 const countBlock = document.querySelector('.count-block');
 const bookCrdAuthor = document.querySelector('.book-crd-author');
 const bookCrdTitle = document.querySelector('.book-crd-title');
 const image = document.querySelector('.image');
 const closeIcon = document.querySelector('.close-btn');
 const modalBack = document.querySelector('.modal_back');
-const bookCrdTxt = document.querySelector('.book-crd-txt');
 const minus = document.querySelector('.minus');
 const plus = document.querySelector('.plus');
 const divCount = document.querySelector('.txt-count');
@@ -37,16 +37,17 @@ const accordion = new Accordion(accordionElms, {
   triggerClass: 'ac-title',
   //   panelClass: 'content-ac',
   //   activeClass: 'ac-active',
-  onOpen: currElement => {
-    currElement.querySelector('.icon-ac-bloc').classList.add('rotate');
+  beforeOpen: currElement => {
+    currElement.querySelector('.icon-ac-down').classList.add('rotate');
   },
-  onClose: currElement => {
-    currElement.querySelector('.icon-ac-bloc').classList.remove('rotate');
+  beforeClose: currElement => {
+    currElement.querySelector('.icon-ac-down').classList.remove('rotate');
   },
 });
 
 const renderBookModal = async id => {
   try {
+    loader.classList.toggle('is-open');
     const response = await httpBookId(id);
     const book = response.data;
     price += book.price;
@@ -59,6 +60,7 @@ const renderBookModal = async id => {
 
     acDetails.textContent = book.description;
     accordion.update();
+    loader.classList.toggle('is-open');
   } catch (error) {
     document.querySelector('.error').classList.add('is-open');
     document.querySelector('.modal').style.overflow = 'hidden';
@@ -68,6 +70,7 @@ const renderBookModal = async id => {
       position: 'topCenter',
     });
   }
+  loader.classList.toggle('is-open');
 };
 
 countBlock.addEventListener('click', e => {
@@ -80,7 +83,7 @@ countBlock.addEventListener('click', e => {
   }
   count === 0 ? (minus.disabled = true) : (minus.disabled = false);
   divCount.textContent = `${String(count)}`;
-  bookCrdPrice.textContent = `$${String(count * Number(price))}`;
+  bookCrdPrice.textContent = `$${String((count * Number(price)).toFixed(2))}`;
 });
 
 closeIcon.addEventListener('click', e => {
@@ -95,10 +98,12 @@ document.addEventListener('keydown', e => {
 
 const openModalBook = id => {
   modalBack.classList.add('is-open');
+  document.querySelector('body').style.overflow = 'hidden';
   renderBookModal(id);
 };
 
 const closeModalBook = () => {
+  document.querySelector('body').style.overflow = 'auto';
   modalBack.classList.remove('is-open');
   resetFunc();
 };
@@ -114,28 +119,41 @@ const resetFunc = () => {
   price = 0;
   count = 1;
   divCount.textContent = '';
-  accordion.destroy();
+  accordion.closeAll();
   document.querySelector('.error').classList.remove('is-open');
   document.querySelector('.modal').style.overflow = 'auto';
 };
 
 addBtn.addEventListener('click', e => {
-  iziToast.info({
-    title: `${count} ${count === 1 ? 'book' : 'books'} "${
-      bookCrdTitle.textContent
-    }" by author ${bookCrdAuthor.textContent} Added`,
-  });
+  if (count === 0) {
+    iziToast.info({
+      title: 'You have not selected anything',
+      color: 'yellow',
+    });
+  } else {
+    iziToast.info({
+      title: `${count} ${count === 1 ? 'book' : 'books'} "${
+        bookCrdTitle.textContent
+      }" by author ${bookCrdAuthor.textContent} Added`,
+    });
+  }
 });
 
 buyBtn.addEventListener('click', e => {
   iziToast.success({
-    title: 'Instant pay',
+    title: 'Thank you for your purchase',
   });
   setTimeout(() => {
     closeModalBook();
   }, 1000);
 });
 
+modalBack.addEventListener('click', e => {
+  if (e.target === modalBack) {
+    closeModalBook();
+  }
+});
+
 loadMoreBtn.addEventListener('click', e => {
-  openModalBook('65fc3c9ca957e5c1ae05b6b0');
+  openModalBook(loadMoreBtn.id);
 });
