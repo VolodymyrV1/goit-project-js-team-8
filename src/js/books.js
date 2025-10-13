@@ -107,6 +107,8 @@ async function loadBooksByCategory(category) {
     } else {
       books = books.flat();
     }
+   
+    
 
     // унікальні книги по title
     books = books.filter(
@@ -129,6 +131,9 @@ async function loadBooksByCategory(category) {
           ? book.author.toLowerCase()
           : 'невідомий автор';
         const price = book.price || 'немає ціни';
+        const bookId = book._id;
+        
+      
         const imageUrl =
           book.book_image ||
           'https://via.placeholder.com/227x322?text=No+Image';
@@ -137,7 +142,7 @@ async function loadBooksByCategory(category) {
           <li class="books-item-wraper">
             <div class="book-item-container">
               <div class="books-img-wraper">
-                <img src="${imageUrl}" alt="${title}" class="books-image"/>
+                <img src="${imageUrl}" alt="${title}" class="books-ima"/>
               </div>
               <div class="books-info-wraper">
                 <div class="books-text-wraper">
@@ -149,7 +154,7 @@ async function loadBooksByCategory(category) {
                 </div>
               </div>
               <div class="button-wraper">
-                <button type="button" class="books-button btn">Learn More</button>
+                <button type="button" class="books-button btn" id="${bookId}">Learn More</button>
               </div>
             </div>
           </li>
@@ -161,7 +166,7 @@ async function loadBooksByCategory(category) {
 
     // оновлюємо лічильник
     if (catagoryCountEl) {
-      catagoryCountEl.textContent = `Показано ${visibleBooks.length} з ${books.length}`;
+      catagoryCountEl.textContent = `Showing ${visibleBooks.length} з ${books.length}`;
     }
   } catch (error) {
     console.error('Помилка при завантаженні книг:', error);
