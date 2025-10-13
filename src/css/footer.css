@@ -21,8 +21,8 @@
 
 
 
-.footer-logo:hover .footer-logo-icon,
-.footer-logo:focus .footer-logo-icon {
+.footer-logo-icon:hover ,
+.footer-logo-icon:focus {
     fill: #fff;
      background-color: black;
     border-radius: 4px;
@@ -95,8 +95,8 @@
 
 
 .subscribe-form-input:focus {
-  border-color: #8d8175;
-  box-shadow: 0 0 0 3px rgba(230, 144, 64, 0.4);
+  border-color: #0B0500;
+ 
 }
 
 .subscribe-form-input::placeholder {
@@ -125,8 +125,8 @@
 }
 
 .subscribe-button:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  fill: white;
+  background-color: #0B0500;
+  color: white;
 }
 
 .required-text {
