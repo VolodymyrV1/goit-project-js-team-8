@@ -262,7 +262,6 @@
 
   .feedback-cards {
     gap: 24px;
-    overflow-x: auto;
     scroll-snap-type: x mandatory;
   }
 
