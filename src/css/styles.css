@@ -9,7 +9,6 @@
 @import url('./base.css');
 @import url('./container.css');
 
-
 /* Sections style */
 @import url('./navbar.css');
 @import url('./header.css');
@@ -17,11 +16,8 @@
 @import url('./books.css');
 @import url('./feedbacks.css');
 @import url('./events.css');
+@import url('./article.css');
 @import url('./location.css');
 @import url('./footer.css');
 @import url('./book_modal_window.css');
 @import url('./contact_modal_window.css');
-
-
-
-
