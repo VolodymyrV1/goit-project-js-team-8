@@ -15,7 +15,7 @@
     <script type="module" crossorigin src="/goit-project-js-team-8/index.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-project-js-team-8/assets/vendor-DQvwmEmZ.js">
     <link rel="stylesheet" crossorigin href="/goit-project-js-team-8/assets/vendor-uGqyt-El.css">
-    <link rel="stylesheet" crossorigin href="/goit-project-js-team-8/assets/index-Blm6ymIE.css">
+    <link rel="stylesheet" crossorigin href="/goit-project-js-team-8/assets/index-C52mlW-0.css">
   </head>
 
     <body>
@@ -227,12 +227,150 @@
     </div>
 
 </section>
-        <section class="" id="feedbacks">
-    <div class="container">
-
+        <head>
+  <link rel="stylesheet" href="src/css/feedbacks.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+<section id="feedbacks">
+  <div class="container">
+    <h2 class="section-title">Customer Feedbacks</h2>
+    <p class="section-subtitle">See what our readers are saying about us!</p>
+    <div class="feedback-cards">
+      <div class="card">
+        <p class="feedback-text">Great selection, fast delivery, and beautifully packaged books. My go-to store for weekend reads!</p>
+        <div class="profile">
+          <img src="/goit-project-js-team-8/assets/Avatar-Image-BV_xThVc.png" alt="Jane Doe" class="avatar" />
+          <div>
+            <span class="name">Jane Doe</span><br>
+            <span class="role">Book Lover, Reader</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <p class="feedback-text">Customer service was super helpful, and my order arrived earlier than expected. Highly recommend!</p>
+        <div class="profile">
+          <img src="/goit-project-js-team-8/assets/Avatar-Image-1-D0cS8W10.png" alt="John Smith" class="avatar" />
+          <div>
+            <span class="name">John Smith</span><br>
+            <span class="role">Editor, BookMag</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <p class="feedback-text">Love the curated picks and clear descriptions. Makes it easy to find my next favorite book.</p>
+        <div class="profile">
+          <img src="/goit-project-js-team-8/assets/Avatar-Image-2-Bu706qSl.png" alt="Emily Johnson" class="avatar" />
+          <div>
+            <span class="name">Emily Johnson</span><br>
+            <span class="role">Author, Novelist</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <p class="feedback-text"> Excellent selection of books, fast delivery, and excellent service. Plus, the packaging is beautiful!</p>
+        <div class="profile">
+          <img src="/goit-project-js-team-8/assets/1oqxk48x162dxtmmfd5ve8dlodkayil73-Dq4ZiEN-.jpg" alt="Anna Petrova" class="avatar" />
+          <div>
+            <span class="name">Anna Petrova</span><br>
+            <span class="role">Reader, Buyer</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <p class="feedback-text"> Very pleasant service and good recommendations. I will definitely order again!</p>
+        <div class="profile">
+          <img src="data:image/jpeg;base64,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" alt="Sergey Ivanov" class="avatar" />
+          <div>
+            <span class="name">Sergey Ivanov</span><br>
+            <span class="role">Reader</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <p class="feedback-text">I love this store for its quality books and fast delivery. Highly recommend!</p>
+        <div class="profile">
+          <img src="/goit-project-js-team-8/assets/1647121567_1-kartinkin-net-p-kartinki-litso-devushki-1-C264eyBq.png" alt="Elena Smirnova" class="avatar" />
+          <div>
+            <span class="name">Elena Smirnova</span><br>
+            <span class="role">Book Enthusiast</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <p class="feedback-text">Amazing books and super-fast delivery. I will definitely order again!</p>
+        <div class="profile">
+          <img src="data:image/jpeg;base64,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" alt="Alex Brown" class="avatar" />
+          <div>
+            <span class="name">Alex Brown</span><br>
+            <span class="role">Reader</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <p class="feedback-text">The curated selections always surprise me. Excellent service!</p>
+        <div class="profile">
+          <img src="/goit-project-js-team-8/assets/111-CnYKgZ40.png" alt="Linda Green" class="avatar" />
+          <div>
+            <span class="name">Linda Green</span><br>
+            <span class="role">Book Enthusiast</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <p class="feedback-text">I love their packaging and speedy delivery. Great experience!</p>
+        <div class="profile">
+          <img src="data:image/jpeg;base64,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" alt="Michael Lee" class="avatar" />
+          <div>
+            <span class="name">Michael Lee</span><br>
+            <span class="role">Reader</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <p class="feedback-text">Excellent service and helpful team. Highly satisfied with my orders!</p>
+        <div class="profile">
+          <img src="/goit-project-js-team-8/assets/33_4db9ffeb630c21664-BTUYOFKQ.jpg" alt="Sophie White" class="avatar" />
+          <div>
+            <span class="name">Sophie White</span><br>
+            <span class="role">Book Lover</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <p class="feedback-text">Fast delivery and amazing book choices. I am a happy customer!</p>
+        <div class="profile">
+          <img src="data:image/jpeg;base64,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" alt="Daniel King" class="avatar" />
+          <div>
+            <span class="name">Daniel King</span><br>
+            <span class="role">Reader</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <p class="feedback-text">Very satisfied with the quality of books and service. Will recommend to friends!</p>
+        <div class="profile">
+          <img src="data:image/jpeg;base64,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" alt="Emma Davis" class="avatar" />
+          <div>
+            <span class="name">Emma Davis</span><br>
+            <span class="role">Book Enthusiast</span>
+          </div>
+        </div>
+      </div>
     </div>
-
+    <div class="slider-controls">
+      <div class="dots"></div>
+      <div class="arrows">
+        <button class="arrow left">&lt;</button>
+        <button class="arrow right">&gt;</button>
+      </div>
+    </div>
+  </div>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="src/js/feedbacks.js"></script>
+
         <section class="events-section" id="events">
   <div class="container events-container">
     <p class="events-events">Events</p>
