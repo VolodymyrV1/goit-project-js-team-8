@@ -89,9 +89,10 @@
   border-radius: 8px;
   line-height: 150%;
   background-color: #d68953;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   outline: none;
+  height: 48px;
 }
 
 
@@ -122,6 +123,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   word-break: break-word;
+  height: 48px;
 
 }
 
