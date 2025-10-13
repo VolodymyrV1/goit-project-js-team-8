@@ -159,7 +159,7 @@
  
   .footer-logo {
     justify-content: center;
-    width: fit-content;
+    
   }
 
   .footer-nav-list {
@@ -194,6 +194,7 @@ flex-wrap: wrap;
  
 .footer-logo {
   justify-content: start;
+  width: fit-content;
 }
 
 .footer-copyright {
