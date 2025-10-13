@@ -15,7 +15,7 @@
 
 
     <script type="module" crossorigin src="/goit-project-js-team-8/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/goit-project-js-team-8/assets/index-CnX2vgwh.css">
+    <link rel="stylesheet" crossorigin href="/goit-project-js-team-8/assets/index-DfVUlGPW.css">
   </head>
 
     <body>
@@ -24,12 +24,12 @@
         <div class="navbar-wrap-top">
             <a class="navbar-logo" href="./index.html">
             <svg class="navbar-logo-icon" width="84" height="36">
-                <use href="/goit-project-js-team-8/assets/symbol-defs-C-4yk-_O.svg#icon-AlternateFalse"></use>
+                <use href="/goit-project-js-team-8/assets/symbol-defs-BhaV99Xw.svg#icon-AlternateFalse"></use>
             </svg>
             </a>
             <button class="navbar-close-btn" type="button" data-menu-open>
                 <svg class="navbar-close-icon" width="24" height="24">
-                    <use href="/goit-project-js-team-8/assets/symbol-defs-C-4yk-_O.svg#icon-x"></use>
+                    <use href="/goit-project-js-team-8/assets/symbol-defs-BhaV99Xw.svg#icon-x"></use>
             </svg>
         </button>
         </div>
@@ -69,7 +69,7 @@
         <a class="header-logo" href="./index.html">
 
             <svg class="header-logo-icon" width="84" height="36">
-                <use href="/goit-project-js-team-8/assets/symbol-defs-C-4yk-_O.svg#icon-AlternateFalse"></use>
+                <use href="/goit-project-js-team-8/assets/symbol-defs-BhaV99Xw.svg#icon-AlternateFalse"></use>
 
 
             </svg>
@@ -100,7 +100,7 @@
 
         <button class="menu-btn" type="button" data-menu-open>
             <svg class="menu-icon" width="24" height="24">
-                <use href="/goit-project-js-team-8/assets/symbol-defs-C-4yk-_O.svg#icon-menu-alt-right"></use>
+                <use href="/goit-project-js-team-8/assets/symbol-defs-BhaV99Xw.svg#icon-menu-alt-right"></use>
             </svg>
         </button>
 
@@ -113,12 +113,114 @@
 
 
       <main>
-        <section class="" id="hero">
-    <div class="container">
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero_slider swiper" id="hero-swiper">
+      <ul class="swiper-wrapper">
+        <li class="swiper-slide hero_slide">
+          <div class="hero_banner">
+            <img
+              class="hero_image"
+              src="/goit-project-js-team-8/assets/baner-1-LRY9MGf4.jpg"
+              srcset="/goit-project-js-team-8/assets/baner-1-LRY9MGf4.jpg 1x, /goit-project-js-team-8/assets/baner-1@2x-P_jbvXR5.jpg 2x"
+              alt="Відкрита книга, плед і чашка кави"
+            />
+            <div class="hero_overlay">
+              <h2 class="hero_offer">
+                Get 10% off your<br />
+                first order
+              </h2>
+              <a href="#books" class="hero_btn">
+                <p class="btn_text">Shop Now!</p>
+              </a>
+            </div>
+          </div>
+        </li>
+        <!-- Slide 2 -->
+        <li class="swiper-slide hero_slide">
+          <div class="hero_banner">
+            <img
+              class="hero_image"
+              src="/goit-project-js-team-8/assets/baner-2-CLpvfSLZ.jpg"
+              srcset="/goit-project-js-team-8/assets/baner-2-CLpvfSLZ.jpg 1x, /goit-project-js-team-8/assets/baner-2@2x-ByLeVPUY.jpg 2x"
+              alt="Дівчина читає книгу біля вікна"
+            />
+            <div class="hero_overlay">
+              <h2 class="hero_offer">
+                Save 15% on <br />
+                some books
+              </h2>
+              <a href="#books" class="hero_btn"
+                ><p class="btn_text">Shop Now!</p></a
+              >
+            </div>
+          </div>
+        </li>
 
+        <!-- Slide 3 -->
+        <li class="swiper-slide hero_slide">
+          <div class="hero_banner">
+            <img
+              class="hero_image"
+              src="/goit-project-js-team-8/assets/baner-3-BFQxa-Ex.jpg"
+              srcset="/goit-project-js-team-8/assets/baner-3-BFQxa-Ex.jpg 1x, /goit-project-js-team-8/assets/baner-3@2x-85ahNkmn.jpg 2x"
+              alt="Книги на дерев’яному столі біля кави"
+            />
+            <div class="hero_overlay">
+              <h2 class="hero_offer">
+                Summer Sale! <br />Up to -40% discounts
+              </h2>
+              <a href="#books" class="hero_btn"
+                ><p class="btn_text">Shop Now!</p></a
+              >
+            </div>
+          </div>
+        </li>
+
+        <!-- Slide 4 -->
+        <li class="swiper-slide hero_slide">
+          <div class="hero_banner">
+            <img
+              class="hero_image"
+              src="/goit-project-js-team-8/assets/baner-4-ns7s4N_P.jpg"
+              srcset="/goit-project-js-team-8/assets/baner-4-ns7s4N_P.jpg 1x, /goit-project-js-team-8/assets/baner-4@2x-Bl__Bbly.jpg 2x"
+              alt="Читач у бібліотеці з книгою в руках"
+            />
+            <div class="hero_overlay">
+              <h2 class="hero_offer">
+                Last chance to buy<br />
+                our spring bestsellers
+              </h2>
+              <a href="#books" class="hero_btn"
+                ><p class="btn_text">Shop Now!</p></a
+              >
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
 
+    <div class="hero_bottom">
+      <h1 id="hero-title" class="hero_title">
+        Discover Your Next Great Read Today!
+      </h1>
+      <div class="hero_nav">
+        <button id="hero-prev" aria-label="Previous slide" disabled>
+          <svg width="13" height="13">
+            <use href="/goit-project-js-team-8/assets/symbol-defs-BhaV99Xw.svg#icon-arrow-left"></use>
+          </svg>
+        </button>
+        <button id="hero-next" aria-label="Next slide">
+          <svg width="13" height="13">
+            <use href="/goit-project-js-team-8/assets/symbol-defs-BhaV99Xw.svg#icon-arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
 </section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
         <section class="" id="books">
     <div class="container">
 
@@ -190,7 +292,7 @@
     <div class="footer-content-nav">
       <a class="footer-logo" href="./index.html">
         <svg class="footer-logo-icon" width="84" height="36">
-          <use href="/goit-project-js-team-8/assets/symbol-defs-C-4yk-_O.svg#icon-AlternateFalse"></use>
+          <use href="/goit-project-js-team-8/assets/symbol-defs-BhaV99Xw.svg#icon-AlternateFalse"></use>
         </svg>
       </a>
       <nav class="footer-nav">
