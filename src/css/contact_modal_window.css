@@ -18,11 +18,11 @@
 }
 
 .modal-content {
-  background: white;
+  background: #fceee6;
   border-radius: 8px;
   width: 100%;
-  max-width: 500px;
-  max-height: 90vh;
+  max-width: 760px;
+  max-height: 704px;
   overflow-y: auto;
   position: relative;
   padding: 40px 20px;
@@ -63,7 +63,7 @@ body.modal-open {
   line-height: 1.4;
   text-align: center;
   margin-bottom: 32px;
-  color: #666;
+  color: #0b0500;
 }
 
 .modal-contacts_form {
@@ -108,7 +108,7 @@ textarea.form-control {
 }
 
 .register-btn {
-  width: 100%;
+  width: 50%;
   height: 48px;
   background-color: #e15d05;
   color: #fff;
@@ -119,6 +119,7 @@ textarea.form-control {
   cursor: pointer;
   margin-top: 10px;
   transition: background-color 0.3s ease;
+  margin-left: 25%;
 }
 
 .register-btn:hover {

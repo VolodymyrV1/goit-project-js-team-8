@@ -1,23 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
-  <symbol id="icon-left-arrow-alt" viewBox="0 0 31 32">
-    <path
-      d="M16.265 23.306l-5.495-5.495h12.27v-2.56h-12.27l5.495-5.495-1.81-1.81-8.585 8.585 8.585 8.585 1.81-1.81z"
-    ></path>
-  </symbol>
-  <symbol id="icon-right-arrow-alt" viewBox="0 0 31 32">
-    <path
-      d="M14.455 23.306l1.81 1.81 8.585-8.585-8.585-8.585-1.81 1.81 5.495 5.495h-12.27v2.56h12.27l-5.495 5.495z"
-    ></path>
-  </symbol>
-  <symbol id="icon-reg" viewBox="0 0 21 32">
-    <path
-      d="M5.441 31.639l15.219-15.219-15.219-15.219-3.771 3.771 11.448 11.448-11.448 11.448 3.771 3.771z"
-    ></path>
-  </symbol>
-</svg>
-<section class="events-section">
+<section class="events-section" id="events">
   <div class="container events-container">
-    <p class="events-descr-title">Events</p>
+    <p class="events-events">Events</p>
     <h2 class="events-title">Upcoming Events at Booksy</h2>
     <p class="events-text">
       Discover readings, workshops, and bookish gatherings — online and offline.
@@ -58,15 +41,17 @@
               alt="The Midnight Library"
             />
           </picture>
+
           <div class="events-descr">
             <h3 class="events-descr-title">
               Cozy Book Club — “The Midnight Library”
             </h3>
             <p class="events-descr-meta">In-store | June 5, 6:30 PM</p>
-            <p class="events-descr-text store-descr">
+            <p class="events-descr-text">
               Join us for an evening of tea, thoughtful conversation, and shared
               reflections as we dive into Matt Haig’s bestseller.
             </p>
+
             <button
               class="events-btn js-register"
               type="button"
@@ -77,7 +62,10 @@
             >
               Register
               <svg width="8" height="12">
-                <use class="events-icon" href="#icon-reg"></use>
+                <use
+                  class="events-icon"
+                  href="/img/symbol-defs.svg#icon-reg"
+                ></use>
               </svg>
             </button>
           </div>
@@ -118,7 +106,7 @@
           <div class="events-descr">
             <h3 class="events-descr-title">Book Cover Design Workshop</h3>
             <p class="events-descr-meta">Online | June 12, 7:00 PM</p>
-            <p class="events-descr-text book-descr">
+            <p class="events-descr-text events-descr-text-des">
               A hands-on session for aspiring designers and curious readers.
               Learn what makes a cover stand out — from concept to print.
             </p>
@@ -132,7 +120,10 @@
             >
               Register
               <svg width="8" height="12">
-                <use class="events-icon" href="#icon-reg"></use>
+                <use
+                  class="events-icon"
+                  href="/img/symbol-defs.svg#icon-reg"
+                ></use>
               </svg>
             </button>
           </div>
@@ -169,10 +160,11 @@
               alt="Children’s Reading Hour"
             />
           </picture>
+
           <div class="events-descr">
-            <h3 class="events-descr-title">Children’s Story Hour</h3>
+            <h3 class="ev-descr-title">Children’s Story Hour</h3>
             <p class="events-descr-meta">In-store | June 15, 11:00 AM</p>
-            <p class="events-descr-text child-descr">
+            <p class="events-descr-text events-descr-text-child">
               A magical morning of stories, games, and imagination for our
               youngest book lovers (ages 4–8).
             </p>
@@ -186,14 +178,19 @@
             >
               Register
               <svg width="8" height="12">
-                <use class="events-icon" href="#icon-reg"></use>
+                <use
+                  class="events-icon"
+                  href="/img/symbol-defs.svg#icon-reg"
+                ></use>
               </svg>
             </button>
           </div>
         </li>
       </ul>
+
       <div class="events-slide-wrap">
         <ul class="events-pagination" aria-label="Slides pagination"></ul>
+
         <div class="events-nav" aria-label="Slider navigation">
           <button
             class="events-swipe-btn-prev"
@@ -201,7 +198,10 @@
             aria-label="Previous slide"
           >
             <svg width="14" height="14" aria-hidden="true">
-              <use class="events-icon-swiper" href="#icon-left-arrow-alt"></use>
+              <use
+                class="events-icon-ar"
+                href="/img/symbol-defs.svg#icon-left-arrow-alt"
+              ></use>
             </svg>
           </button>
           <button
@@ -211,8 +211,8 @@
           >
             <svg width="14" height="14" aria-hidden="true">
               <use
-                class="events-icon-swiper"
-                href="#icon-right-arrow-alt"
+                class="events-icon-ar"
+                href="/img/symbol-defs.svg#icon-right-arrow-alt"
               ></use>
             </svg>
           </button>
