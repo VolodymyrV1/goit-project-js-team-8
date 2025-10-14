@@ -27,4 +27,4 @@ function updateHeroNavButtons() {
 }
 
 updateHeroNavButtons();
-console.log('Swiper initialized:', heroSwiper);
+// console.log('Swiper initialized:', heroSwiper);

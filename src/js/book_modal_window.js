@@ -12,7 +12,6 @@ const httpBookId = async id => {
 };
 
 const loader = document.querySelector('.loader-back');
-const loadMoreBtn = document.querySelector('.books-button');
 const countBlock = document.querySelector('.count-block');
 const bookCrdAuthor = document.querySelector('.book-crd-author');
 const bookCrdTitle = document.querySelector('.book-crd-title');
@@ -27,8 +26,11 @@ const accordionElms = document.querySelector('.accordion-container');
 const acDetails = document.querySelector('.txt-details');
 const addBtn = document.querySelector('.add-btn');
 const buyBtn = document.querySelector('.buy-btn');
+const booksListEll = document.querySelector('.books-list');
 let count = 1;
 let price = 0;
+
+
 const accordion = new Accordion(accordionElms, {
   collapse: true,
   showMultiple: true,
@@ -157,6 +159,16 @@ modalBack.addEventListener('click', e => {
   }
 });
 
-loadMoreBtn.addEventListener('click', e => {
-  openModalBook(loadMoreBtn.id);
+
+
+booksListEll.addEventListener('click', e => {
+
+  
+  // шукаємо кнопку з класом .books-button (або id="load-more")
+  const btn = e.target.closest('.books-button');
+
+  if (!btn) return; // якщо не кнопка, нічого не робимо
+
+  // відкриваємо модалку
+  openModalBook(btn.id);
 });
