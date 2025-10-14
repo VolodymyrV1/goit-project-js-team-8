@@ -102,6 +102,8 @@ gap: 80px;
 padding: 64px 0;
 width: 100%;
 max-width: 768px;
+margin: 0 auto;
+  /* ✅ центруємо секцію */
 }
 .location__container {
 display: grid;
@@ -114,6 +116,9 @@ column-gap: 32px;
 width: 704px;
 height: auto;
 margin-bottom: 80px;
+width: 100%;
+margin-inline: auto;
+  /* ✅ додаткове центрування */
 }
 .location__content {
 grid-area: content;
