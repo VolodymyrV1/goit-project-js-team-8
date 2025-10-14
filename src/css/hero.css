@@ -148,7 +148,7 @@
     .hero .container {
         max-width: 768px;
         margin: 0 auto;
-        padding: 0 16px;
+ 
       }
   .hero_image {
     width: 704px;
@@ -209,6 +209,11 @@
 /* ============== DESKTOP VERSION ================== */
 /* ================================================= */
 @media screen and (min-width: 1440px) {
+      .hero .container {
+          max-width: 1440px;
+          margin: 0 auto;
+      
+        }
   .hero_overlay {
     width: 100%;
     height: auto;
