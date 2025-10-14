@@ -19,9 +19,9 @@
       rel="stylesheet"
     />
     <script type="module" crossorigin src="/goit-project-js-team-8/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-project-js-team-8/assets/vendor-CnFh_1u2.js">
+    <link rel="modulepreload" crossorigin href="/goit-project-js-team-8/assets/vendor-BWZFsOUI.js">
     <link rel="stylesheet" crossorigin href="/goit-project-js-team-8/assets/vendor-W1qV8qBY.css">
-    <link rel="stylesheet" crossorigin href="/goit-project-js-team-8/assets/index-CbaCZ9Zi.css">
+    <link rel="stylesheet" crossorigin href="/goit-project-js-team-8/assets/index-Cvz1F-kl.css">
   </head>
 
   <body>
@@ -227,12 +227,46 @@
 </section>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-      <section class="" id="books">
-    <div class="container">
+      <section id="books">
+  <div class="container books-wraper">
+    <h2 class="books-title visually-hidden">Trending books</h2>
 
+    <!-- Блок категоategory-wrapeрій -->
+    <div class="cr">
+      <div class="category-header-wraper">
+        <h3 class="category-title">Books</h3>
+        <p id="category-count" class="category-count">Показано 0 з 0</p>
+      </div>
+      <div class="category-list-wraper">
+        <button class="dropdown-btn">Categories
+          <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M10.293 0.792969L5.99997 5.08597L1.70697 0.792969L0.292969 2.20697L5.99997 7.91397L11.707 2.20697L10.293 0.792969Z"
+              fill="#0B0500" />
+          </svg>
+        </button>
+        <ul id="category-list" class="category-list"></ul>
+      </div>
     </div>
 
+    <!-- Список книг -->
+    <div class="list-wraper">
+      <ul id="books-list" class="books-list"></ul>
+    </div>
+
+    <div class="load-more-wrap">
+      <div class="loader-back">
+        <div class="loader"></div>
+      </div>
+  <button class="load-more-button" id="load-more" type="button" >
+    Show More
+  </button>
+</div>
+
+
+  </div>
 </section>
+
       <head>
   <link rel="stylesheet" href="src/css/feedbacks.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
