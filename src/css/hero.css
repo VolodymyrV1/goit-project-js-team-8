@@ -145,6 +145,11 @@
 /* ============== TABLET VERSION =================== */
 /* ================================================= */
 @media screen and (min-width: 768px) {
+    .hero .container {
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
   .hero_image {
     width: 704px;
     height: 274px;

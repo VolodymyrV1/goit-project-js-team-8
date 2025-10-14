@@ -1,6 +1,4 @@
-.hero {
-    background-color: blue;
-}
+
 
 .header-container {
     display: flex;
@@ -26,6 +24,10 @@
     transition: fill 250ms ease-in-out;
 
 
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 .header-logo:focus,
