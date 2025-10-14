@@ -60,7 +60,7 @@ const renderBookModal = async id => {
 
     acDetails.textContent = book.description;
     accordion.update();
-    loader.classList.toggle('is-open');
+   
   } catch (error) {
     document.querySelector('.error').classList.add('is-open');
     document.querySelector('.modal').style.overflow = 'hidden';
@@ -69,8 +69,11 @@ const renderBookModal = async id => {
       message: 'Not found 404',
       position: 'topCenter',
     });
+  } finally {
+    loader.classList.toggle('is-open');
+
   }
-  loader.classList.toggle('is-open');
+
 };
 
 countBlock.addEventListener('click', e => {

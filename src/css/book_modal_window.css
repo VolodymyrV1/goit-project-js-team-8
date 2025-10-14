@@ -193,6 +193,12 @@
   color: white;
   margin-bottom: 24px;
 }
+.add-btn:hover,
+.add-btn:focus {
+  background: transparent;
+  border: 1px solid rgba(11, 5, 0, 0.15);
+}
+
 
 .buy-btn {
   border: 1px solid #0b0500;
@@ -314,7 +320,8 @@
 @media only screen and (min-width: 768px) {
   .container.modal {
     max-height: calc(100vh - (22.5px + 22.5px));
-    max-width: calc(100% - 64px);
+    /* max-width: calc(100% - 64px); */
+    max-width: 704px;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
@@ -371,7 +378,8 @@
 @media only screen and (min-width: 1440px) {
   .container.modal {
     max-height: calc(100% - (64px + 64px));
-    max-width: calc(100% - (70px + 70px));
+    /* max-width: calc(100% - (70px + 70px)); */
+    max-width: 1300px;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
