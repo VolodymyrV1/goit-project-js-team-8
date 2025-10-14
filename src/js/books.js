@@ -1,12 +1,18 @@
 import axios from 'axios'; // імпортуємо axios для запитів до API
 
+let allBooks = [];
+let visibleBooksCount = 0;
+const increment = 4;
+const loadMoreBtn = document.getElementById('load-more');
+
 // елементи на сторінці
 const categoryListEl = document.getElementById('category-list'); // ul для категорій
 const booksListEl = document.getElementById('books-list'); // ul для книг
 const catagoryCountEl = document.getElementById('category-count'); // елемент для відображення кількості книг
+const loader = document.querySelector('.loader-back');
 
 // функція завантаження категорій
-export async function loadCategories() {
+async function loadCategories() {
   if (!categoryListEl) return;
 
   try {
@@ -89,6 +95,7 @@ async function loadBooksByCategory(category) {
   if (!booksListEl) return;
 
   try {
+    showLoader();
     let url;
     if (category === 'All categories') {
       url = 'https://books-backend.p.goit.global/books/top-books';
@@ -101,77 +108,110 @@ async function loadBooksByCategory(category) {
     const response = await axios.get(url);
     let books = response.data;
 
-    // нормалізація структури
     if (category === 'All categories') {
       books = books.flatMap(item => item.books);
     } else {
       books = books.flat();
     }
-   
-    
 
-    // унікальні книги по title
     books = books.filter(
       (book, index, self) =>
         index === self.findIndex(b => b.title === book.title)
     );
 
-    // 🔹 визначаємо кількість книг для показу залежно від ширини екрану
+    allBooks = books;
+
+    // Визначаємо початкову кількість книг залежно від ширини
     const screenWidth = window.innerWidth;
-    const visibleCount = screenWidth < 1440 ? 10 : 24;
+    const initialCount = screenWidth < 1440 ? 10 : 24;
 
-    const visibleBooks = books.slice(0, visibleCount);
-    booksListEl.innerHTML = '';
+    // Якщо зараз вже показано більше, залишаємо
+    visibleBooksCount = Math.min(initialCount, allBooks.length);
 
-    // формуємо розмітку книг
-    const markup = visibleBooks
-      .map(book => {
-        const title = book.title ? book.title.toLowerCase() : 'без назви'; // 🟢 текст малими літерами
-        const author = book.author
-          ? book.author.toLowerCase()
-          : 'невідомий автор';
-        const price = book.price || 'немає ціни';
-        const bookId = book._id;
-        
-      
-        const imageUrl =
-          book.book_image ||
-          'https://via.placeholder.com/227x322?text=No+Image';
+    renderBooks();
+    toggleLoadMoreButton();
 
-        return `
-          <li class="books-item-wraper">
-            <div class="book-item-container">
-              <div class="books-img-wraper">
-                <img src="${imageUrl}" alt="${title}" class="books-img"/>
-              </div>
-              <div class="books-info-wraper">
-                <div class="books-text-wraper">
-                  <h4>${title}</h4>
-                  <p>${author}</p>
-                </div>
-                <div class="books-price-wraper">
-                  <p>$${price}</p>
-                </div>
-              </div>
-              <div class="button-wraper">
-                <button type="button" class="books-button btn" id="${bookId}">Learn More</button>
-              </div>
-            </div>
-          </li>
-        `;
-      })
-      .join('');
-
-    booksListEl.insertAdjacentHTML('beforeend', markup);
-
-    // оновлюємо лічильник
-    if (catagoryCountEl) {
-      catagoryCountEl.textContent = `Showing ${visibleBooks.length} з ${books.length}`;
-    }
   } catch (error) {
     console.error('Помилка при завантаженні книг:', error);
+  } finally {
+    hideLoader();
   }
 }
+
+function renderBooks() {
+  booksListEl.innerHTML = '';
+  const booksToShow = allBooks.slice(0, visibleBooksCount);
+
+  const markup = booksToShow
+    .map(book => {
+      const title = book.title ? book.title.toLowerCase() : 'без назви';
+      const author = book.author ? book.author.toLowerCase() : 'невідомий автор';
+      const price = book.price || 'немає ціни';
+      const bookId = book._id;
+      const imageUrl = book.book_image || 'https://via.placeholder.com/227x322?text=No+Image';
+
+      return `
+        <li class="books-item-wraper">
+          <div class="book-item-container">
+            <div class="books-img-wraper">
+              <img src="${imageUrl}" alt="${title}" class="books-img"/>
+            </div>
+            <div class="books-info-wraper">
+              <div class="books-text-wraper">
+                <h4>${title}</h4>
+                <p>${author}</p>
+              </div>
+              <div class="books-price-wraper">
+                <p>$${price}</p>
+              </div>
+            </div>
+            <div class="button-wraper">
+              <button type="button" class="books-button btn" id="${bookId}">Learn More</button>
+            </div>
+          </div>
+        </li>
+      `;
+    })
+    .join('');
+
+  booksListEl.insertAdjacentHTML('beforeend', markup);
+
+  if (catagoryCountEl) {
+    catagoryCountEl.textContent = `Showing ${booksToShow.length} з ${allBooks.length}`;
+  }
+}
+
+function toggleLoadMoreButton() {
+  if (!loadMoreBtn) return;
+  if (visibleBooksCount >= allBooks.length) {
+    loadMoreBtn.style.display = 'none';
+  } else {
+    loadMoreBtn.style.display = 'block';
+  }
+}
+
+// кнопка Show More
+if (loadMoreBtn) {
+  loadMoreBtn.addEventListener('click', () => {
+    visibleBooksCount = Math.min(visibleBooksCount + increment, allBooks.length);
+    renderBooks();
+    toggleLoadMoreButton();
+  });
+}
+
+window.addEventListener('resize', () => {
+  if (!allBooks.length) return;
+
+  const screenWidth = window.innerWidth;
+  const newInitial = screenWidth < 1440 ? 10 : 24;
+
+  if (visibleBooksCount < newInitial) {
+    visibleBooksCount = Math.min(newInitial, allBooks.length);
+    renderBooks();
+    toggleLoadMoreButton();
+  }
+});
+
 
 // чекаємо завантаження DOM
 document.addEventListener('DOMContentLoaded', () => {
@@ -179,3 +219,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+function showLoader() {
+  if(loader) loader.style.display = 'flex';
+}
+
+function hideLoader() {
+  if(loader) loader.style.display = 'none';
+}
