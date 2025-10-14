@@ -203,9 +203,11 @@
   margin-bottom: 24px;
 }
 .add-btn:hover,
-.add-btn:focus {
+.add-btn:focus,
+.add-btn:active {
   background: transparent;
   border: 1px solid rgba(11, 5, 0, 0.15);
+  background-color: #0b0500;
 }
 
 .buy-btn {
@@ -216,6 +218,12 @@
   height: 48px;
   background-color: transparent;
   margin-bottom: 32px;
+}
+
+.buy-btn:hover,
+.buy-btn:focus,
+.buy-btn:active {
+  background: #ea8d50;
 }
 
 .icon-ac-down {
