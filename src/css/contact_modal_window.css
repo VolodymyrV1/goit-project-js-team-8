@@ -21,11 +21,14 @@
   background: #fceee6;
   border-radius: 8px;
   width: 100%;
-  max-width: 760px;
+  /* max-width: 760px; */
   max-height: 704px;
   overflow-y: auto;
   position: relative;
   padding: 40px 20px;
+  /* min-width: 375px; */
+  max-width: 343px;
+  max-height: 704px;
 }
 
 .modal_close-btn {
@@ -145,6 +148,7 @@ textarea.form-control {
 @media screen and (min-width: 768px) {
   .modal-content {
     padding: 48px 40px;
+    max-width: 704px;
   }
 
   .modal-contacts_title {
@@ -156,7 +160,11 @@ textarea.form-control {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
+    .modal-content {
+    
+    max-width: 866px;
+  }
   .modal-contacts_title {
     font-size: 48px;
   }
