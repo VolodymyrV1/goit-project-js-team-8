@@ -6,6 +6,11 @@
 .events-container {
   padding: 64px 16px;
 }
+.events-section .container {
+  max-width: 375px;
+  margin: 0 auto;
+
+}
 
 .events-events {
   font-weight: 600;
@@ -188,6 +193,12 @@
   .events-container {
     padding: 64px 32px;
   }
+  .events-section .container {
+  max-width: 768px;
+  margin: 0 auto;
+
+}
+
 
   .events-photo img {
     height: 277px;
@@ -208,6 +219,12 @@
   .events-section .events-nav {
     display: none;
   }
+  .events-section .container {
+  max-width: 1440px;
+  margin: 0 auto;
+
+}
+
 
   .events-container {
     padding: 64px 64px;
