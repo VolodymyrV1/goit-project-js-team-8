@@ -62,7 +62,7 @@ async function loadCategories() {
       loadBooksByCategory(category);
 
       // Автоматично закриваємо список на мобільному після вибору
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 1440) {
         categoryListEl.classList.remove('show');
       }
     });
@@ -130,7 +130,6 @@ async function loadBooksByCategory(category) {
 
     renderBooks();
     toggleLoadMoreButton();
-
   } catch (error) {
     console.error('Помилка при завантаженні книг:', error);
   } finally {
@@ -145,10 +144,13 @@ function renderBooks() {
   const markup = booksToShow
     .map(book => {
       const title = book.title ? book.title.toLowerCase() : 'без назви';
-      const author = book.author ? book.author.toLowerCase() : 'невідомий автор';
+      const author = book.author
+        ? book.author.toLowerCase()
+        : 'невідомий автор';
       const price = book.price || 'немає ціни';
       const bookId = book._id;
-      const imageUrl = book.book_image || 'https://via.placeholder.com/227x322?text=No+Image';
+      const imageUrl =
+        book.book_image || 'https://via.placeholder.com/227x322?text=No+Image';
 
       return `
         <li class="books-item-wraper">
@@ -193,7 +195,10 @@ function toggleLoadMoreButton() {
 // кнопка Show More
 if (loadMoreBtn) {
   loadMoreBtn.addEventListener('click', () => {
-    visibleBooksCount = Math.min(visibleBooksCount + increment, allBooks.length);
+    visibleBooksCount = Math.min(
+      visibleBooksCount + increment,
+      allBooks.length
+    );
     renderBooks();
     toggleLoadMoreButton();
   });
@@ -212,17 +217,15 @@ window.addEventListener('resize', () => {
   }
 });
 
-
 // чекаємо завантаження DOM
 document.addEventListener('DOMContentLoaded', () => {
   loadCategories();
 });
 
-
 function showLoader() {
-  if(loader) loader.style.display = 'flex';
+  if (loader) loader.style.display = 'flex';
 }
 
 function hideLoader() {
-  if(loader) loader.style.display = 'none';
+  if (loader) loader.style.display = 'none';
 }
