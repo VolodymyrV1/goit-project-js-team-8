@@ -18,7 +18,7 @@ align-items: flex-start;
 justify-content: flex-start;
 flex-direction: column;
 gap: 32px;
-min-height: 479px;
+min-height: 479px; 
 }
 .location__label {
   display: flex;
@@ -61,6 +61,7 @@ justify-content: flex-start;
 flex-direction: row;
 gap: 8px;
 height: auto;
+transition: background-color 0.3s ease; 
 }
 .location__text-content {
 display: flex;
@@ -86,6 +87,8 @@ font-size: 16px;
 line-height: 1.5;
 text-decoration: underline;
 text-decoration-skip-ink: none;
+opacity: 1;
+transition: opacity 250ms ease-in-out;
 }
 .location__map {
   width: 100%;
@@ -96,7 +99,10 @@ height: 395px;
 border: none;
 box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
-
+.location__link:hover,
+.location__link:focus {
+opacity: 0.5;
+}
 /* Планшет */
 @media (min-width: 768px) {
 .location {
