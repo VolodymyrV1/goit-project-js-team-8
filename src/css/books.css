@@ -11,6 +11,13 @@
   overflow: hidden;
 }
 
+.seciton-books {
+  padding-top: 32px;
+}
+
+.books-wraper {
+}
+
 .category-wraper {
   max-width: 100%;
 }
@@ -19,13 +26,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  /* gap: 12px; */
+}
+
+.category-title {
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .category-count {
+  font-weight: 400;
   font-size: 14px;
-  line-height: 150%;
-  color: var(--color-scheme-1-text);
 }
 
 .category-list-wraper {
@@ -41,11 +52,14 @@
   align-items: center;
   width: 100%;
   background-color: rgba(11, 5, 0, 0.05);
-  text-align: left;
-  padding: 8px 12px;
+  /* text-align: left; */
   cursor: pointer;
+
   border: 1px solid rgba(11, 5, 0, 0.15);
   border-radius: 4px;
+  padding: 8px 12px;
+
+  font-weight: 400;
   font-size: 18px;
 }
 
@@ -55,9 +69,11 @@
   inset: auto 0 0 0;
   translate: 0 100%;
   backdrop-filter: blur(6px);
-  background-color: rgba(11, 5, 0, 0.05);
+
   border: 1px solid rgba(11, 5, 0, 0.15);
-  border-radius: 8px;
+  border-radius: 4px;
+  background-color: rgba(11, 5, 0, 0.05);
+
   margin-top: 8px;
   z-index: 100;
   flex-direction: column;
@@ -73,8 +89,12 @@
 }
 
 .category-item {
+  border-radius: 4px;
   padding: 8px 12px;
+
+  font-weight: 400;
   font-size: 14px;
+
   cursor: pointer;
 }
 
@@ -237,7 +257,6 @@
   }
 
   .list-wraper {
-    padding-top: 32px;
   }
 
   .books-img-wraper {
