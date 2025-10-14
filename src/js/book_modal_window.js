@@ -30,7 +30,6 @@ const booksListEll = document.querySelector('.books-list');
 let count = 1;
 let price = 0;
 
-
 const accordion = new Accordion(accordionElms, {
   collapse: true,
   showMultiple: true,
@@ -62,7 +61,6 @@ const renderBookModal = async id => {
 
     acDetails.textContent = book.description;
     accordion.update();
-   
   } catch (error) {
     document.querySelector('.error').classList.add('is-open');
     document.querySelector('.modal').style.overflow = 'hidden';
@@ -73,9 +71,7 @@ const renderBookModal = async id => {
     });
   } finally {
     loader.classList.toggle('is-open');
-
   }
-
 };
 
 countBlock.addEventListener('click', e => {
@@ -159,11 +155,7 @@ modalBack.addEventListener('click', e => {
   }
 });
 
-
-
 booksListEll.addEventListener('click', e => {
-
-  
   // шукаємо кнопку з класом .books-button (або id="load-more")
   const btn = e.target.closest('.books-button');
 
