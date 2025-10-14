@@ -1,0 +1,200 @@
+﻿
+/* Мобільна (основна) */
+
+.location {
+display: flex;
+align-items: center;
+justify-content: flex-start;
+flex-direction: column;
+gap: 32px;
+padding: 64px 0;
+max-width: 375px;
+margin: 0 auto;
+
+}
+.location__container {
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+flex-direction: column;
+gap: 32px;
+min-height: 479px;
+}
+.location__label {
+  display: flex;
+align-items: center;
+justify-content: flex-start;
+flex-direction: row;
+width: 69px;
+font-weight: 600;
+font-size: 16px;
+line-height: 1.5;
+text-transform: capitalize;
+margin-bottom: 16px;
+}
+.location__title {
+font-weight: 600;
+font-size: 48px;
+line-height: 1.2;
+letter-spacing: -0.01em;
+margin-bottom: 24px;
+}
+.location__text {
+font-weight: 400;
+font-size: 18px;
+line-height: 1.5;
+}
+.location__list {
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+flex-direction: column;
+gap: 24px;
+padding: 8px 0px;
+min-height: 244px;
+margin: 0;
+}
+.location__item {
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+flex-direction: row;
+gap: 8px;
+height: auto;
+}
+.location__text-content {
+display: flex;
+flex-direction: column; 
+flex-grow: 1;
+}
+
+.location__address {
+margin-top: -2px;
+}
+.location__icon {
+flex-shrink: 0;
+}
+.location__label-text {
+font-weight: 400;
+font-size: 20px;
+line-height: 1.4;
+letter-spacing: -0.01em;
+}
+.location__link {
+font-weight: 400;
+font-size: 16px;
+line-height: 1.5;
+text-decoration: underline;
+text-decoration-skip-ink: none;
+}
+.location__map {
+  width: 100%;
+}
+.location__map iframe {
+width: 100%;
+height: 395px;
+border: none;
+box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Планшет */
+@media (min-width: 768px) {
+.location {
+gap: 80px;
+padding: 64px 0;
+width: 100%;
+max-width: 768px;
+margin: 0 auto;
+  /* ✅ центруємо секцію */
+}
+.location__container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-areas:
+"content contacts"
+"map map";
+gap: 0;
+column-gap: 32px;
+width: 704px;
+height: auto;
+margin-bottom: 80px;
+width: 100%;
+margin-inline: auto;
+  /* ✅ додаткове центрування */
+}
+.location__content {
+grid-area: content;
+}
+.location__list {
+grid-area: contacts;
+width: 100%; 
+height: auto;
+}
+.location__item {
+width: 100%;
+align-items: flex-start;
+flex-wrap: wrap;
+height: auto;
+}
+.location__map {
+grid-area: map;
+width: 100%;
+height: 395px;
+margin-top: 80px;
+
+}
+
+.location__map iframe { 
+width: 100%;
+max-width: none;
+height: 100%;
+}
+}
+
+/* Десктоп */
+@media (min-width: 1440px) {
+.location {
+gap: 80px;
+padding: 64px 0;
+width: 100%;
+max-width: 1440px;
+}
+.location__container {
+grid-template-columns: 1fr 1fr; 
+grid-template-areas:
+"content contacts"
+"map map";
+column-gap: 80px;
+height: auto;
+margin-bottom: 80px;
+width: 100%;
+}
+.location__content {
+grid-area: content;
+max-width: 732px;
+}
+.location__list {
+grid-area: contacts;
+width: 100%;
+height: auto;
+}
+.location__item {
+width: 100%;
+align-items: flex-start;
+flex-wrap: wrap;
+height: auto;
+}
+.location__map { 
+grid-area: map;
+width: 100%;
+height: 738px;
+}
+
+.location__map iframe {
+width: 100%;
+height: 100%;
+max-width: none;
+}
+}
+
+

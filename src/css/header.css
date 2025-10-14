@@ -1,11 +1,15 @@
-.hero {
-    background-color: blue;
-}
+
 
 .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.header .container {
+          max-width: 375px;
+          margin: 0 auto;
+      
 }
 
 .header-nav-list {
@@ -26,6 +30,10 @@
     transition: fill 250ms ease-in-out;
 
 
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 .header-logo:focus,
@@ -59,6 +67,11 @@
 }
 
 @media screen and (min-width: 768px) {
+            .header .container {
+          max-width: 768px;
+          margin: 0 auto;
+      
+        }
     .menu-btn {
         display: none;
     }
@@ -87,3 +100,11 @@
 
 
 }
+
+@media screen and (min-width: 1440px) {
+            .header .container {
+          max-width: 1440px;
+          margin: 0 auto;
+      
+        }
+    }

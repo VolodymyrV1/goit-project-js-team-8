@@ -1,0 +1,254 @@
+/* ===== HERO SECTION ===== */
+.hero {
+  background-color: #fceee6;
+  padding-bottom: 32px;
+}
+
+.hero .container {
+  overflow: hidden;
+}
+            .hero .container {
+          max-width: 375px;
+          margin: 0 auto;
+      
+        }
+
+/* ==== SLIDER ==== */
+.hero_slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.swiper-slide {
+  width: 100%;
+  flex-shrink: 0;
+  list-style: none;
+}
+
+.swiper-slide {
+  width: 100%;
+  flex-shrink: 0;
+  list-style: none;
+}
+
+.hero_image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* ==== OVERLAY ==== */
+.hero_overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  padding-left: 16px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background: #0000004d;
+  border-radius: 8px;
+}
+
+.hero_offer {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 140%;
+  margin-bottom: 16px;
+  max-width: 228px;
+}
+
+/* ==== BUTTON ==== */
+.hero_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e15d05;
+  border-radius: 2px;
+  text-decoration: none;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero_btn:hover {
+  background-color: #ea8d50;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.btn_text {
+  color: #fff;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 1;
+}
+
+/* ==== HERO BOTTOM ==== */
+.hero_bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  text-align: center;
+}
+.hero_nav {
+  gap: 16px;
+  order: 1;
+  display: flex;
+  align-self: flex-end;
+}
+
+.hero_title {
+  text-align: left;
+  font-size: 40px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: -0.01em;
+  line-height: 120%;
+  max-width: 343px;
+  order: 2;
+}
+
+/* ==== NAVIGATION BUTTONS ==== */
+
+.hero_nav button {
+  background-color: #e15d05;
+  border: none;
+  padding: 8px;
+  width: 48px;
+  height: 48px;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.hero_nav button:hover {
+  transform: scale(1.05);
+}
+
+.hero_nav button.disabled,
+.hero_nav button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ================================================= */
+/* ============== TABLET VERSION =================== */
+/* ================================================= */
+@media screen and (min-width: 768px) {
+    .hero .container {
+        max-width: 768px;
+        margin: 0 auto;
+ 
+      }
+  .hero_image {
+    /* width: 704px; */
+    width: 100%;
+    height: 274px;
+    border-radius: 0;
+  }
+  .hero_banner {
+    width: 100%;
+  }
+  .hero_overlay {
+    height: 274px;
+    padding-left: 40px;
+    border-radius: 0;
+  }
+  .hero_offer {
+    padding-top: 118px;
+    font-size: 32px;
+    max-width: 390px;
+  }
+  .hero_title {
+    font-size: 40px;
+    max-width: 560px;
+    order: 1;
+  }
+
+  .hero_bottom {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+  }
+  .hero_nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 24px;
+  }
+
+  .hero_btn {
+    margin-bottom: 32px;
+    width: 164px;
+    height: 32px;
+    border-radius: 4px;
+  }
+  .btn_text {
+    font-size: 16px;
+  }
+  .hero_bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    margin-top: 24px;
+  }
+}
+
+/* ================================================= */
+/* ============== DESKTOP VERSION ================== */
+/* ================================================= */
+@media screen and (min-width: 1440px) {
+      .hero .container {
+          max-width: 1440px;
+          margin: 0 auto;
+      
+        }
+  .hero_overlay {
+    width: 100%;
+    height: auto;
+    padding-left: 56px;
+    border-radius: 8px;
+  }
+  .hero_image {
+    width: 100%;
+    height: 395px;
+    border-radius: 8px;
+  }
+
+  .hero_offer {
+    font-size: 52px;
+    max-width: 561px;
+    margin-bottom: 20px;
+  }
+
+  .hero_title {
+    font-size: 52px;
+    max-width: 1168px;
+  }
+
+  .hero_btn {
+    margin-bottom: 56px;
+    width: 227px;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 12px 32px;
+  }
+}
