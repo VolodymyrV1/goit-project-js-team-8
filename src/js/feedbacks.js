@@ -1,63 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.feedback-cards .card');
+  const swiper = new Swiper('.feedback-cards', {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    slidesPerGroup: 1, // <-- изменим ниже через breakpoints
+    speed: 600, // <-- более плавная прокрутка
+    keyboard: { enabled: true, onlyInViewport: true },
+    mousewheel: true,
+    simulateTouch: true,
+    breakpoints: {
+      375: { slidesPerView: 1, slidesPerGroup: 1, spaceBetween: 16 },
+      768: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 24 },
+      1440: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 24 }
+    }
+  });
+
   const leftArrow = document.querySelector('.arrow.left');
   const rightArrow = document.querySelector('.arrow.right');
-  const dotsContainer = document.querySelector('.dots');
-  const fixedDots = 4;
-  let currentIndex = 0;
+  const dots = document.querySelectorAll('.dot');
 
-  function getCardsPerPage() {
+  function slidesPerPage() {
     const width = window.innerWidth;
-    if (width <= 400) return 1;
-    if (width <= 768) return 2;
+    if (width < 768) return 1;
+    if (width < 1440) return 2;
     return 3;
   }
 
-  function getTotalPages() {
-    return Math.ceil(cards.length / getCardsPerPage());
+  function updateControls() {
+    const pageIndex = Math.floor(swiper.activeIndex / slidesPerPage());
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === Math.min(pageIndex, dots.length - 1)));
+
+    leftArrow.disabled = swiper.isBeginning;
+    rightArrow.disabled = swiper.isEnd;
+    leftArrow.classList.toggle('disabled', swiper.isBeginning);
+    rightArrow.classList.toggle('disabled', swiper.isEnd);
   }
 
-  function updateSlider() {
-    const cardsPerPage = getCardsPerPage();
-    const totalPages = getTotalPages();
+  leftArrow.addEventListener('click', () => swiper.slidePrev());
+  rightArrow.addEventListener('click', () => swiper.slideNext());
 
-    cards.forEach((card, i) => {
-      const start = currentIndex * cardsPerPage;
-      const end = start + cardsPerPage;
-      card.style.display = i >= start && i < end ? 'flex' : 'none';
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      const targetIndex = Math.floor(i * swiper.slides.length / dots.length);
+      swiper.slideTo(targetIndex);
     });
-
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < fixedDots; i++) {
-      const dot = document.createElement('span');
-      dot.classList.add('dot');
-      dot.classList.toggle('active', i === Math.min(currentIndex, fixedDots - 1));
-      dot.addEventListener('click', () => {
-        currentIndex = Math.floor(i * totalPages / fixedDots);
-        updateSlider();
-      });
-      dotsContainer.appendChild(dot);
-    }
-
-    leftArrow.disabled = currentIndex === 0;
-    rightArrow.disabled = currentIndex >= totalPages - 1;
-  }
-
-  leftArrow.addEventListener('click', () => {
-    if (currentIndex > 0) currentIndex--;
-    updateSlider();
   });
 
-  rightArrow.addEventListener('click', () => {
-    if (currentIndex < getTotalPages() - 1) currentIndex++;
-    updateSlider();
-  });
+  swiper.on('slideChange', updateControls);
+  window.addEventListener('resize', updateControls);
 
-  window.addEventListener('resize', () => {
-    const totalPages = getTotalPages();
-    if (currentIndex >= totalPages) currentIndex = totalPages - 1;
-    updateSlider();
-  });
-
-  updateSlider();
+  updateControls();
 });
