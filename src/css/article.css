@@ -54,7 +54,7 @@
 }
 
 .article__media::after{
-  content: "";
+  content: none;
   position: absolute;
   inset: 0;                      
   border: 1px solid #ead9cc;      
