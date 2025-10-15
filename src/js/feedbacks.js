@@ -1,8 +1,11 @@
+import Swiper from 'swiper';              // імпорт самої бібліотеки
+import 'swiper/css';                      // імпорт стилів swiper
+
 document.addEventListener('DOMContentLoaded', () => {
   const swiper = new Swiper('.feedback-cards', {
     slidesPerView: 1,
     spaceBetween: 24,
-    slidesPerGroup: 1, // <-- изменим ниже через breakpoints
+    // slidesPerGroup: 1, // <-- изменим ниже через breakpoints
     speed: 600, // <-- более плавная прокрутка
     keyboard: { enabled: true, onlyInViewport: true },
     mousewheel: true,
