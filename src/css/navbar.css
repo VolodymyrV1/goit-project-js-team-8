@@ -12,6 +12,20 @@
 
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    overflow-y: auto;
+}
+
+
+body.menu-open {
+    overflow: hidden;
+    height: 100vh;
+    /* блокує прокрутку body */
+}
+
+.navbar-mobile {
+    overflow-y: auto;
+    /* дозволяє скролити меню, якщо пунктів багато */
 }
 
 .navbar-mobile.is-open {
