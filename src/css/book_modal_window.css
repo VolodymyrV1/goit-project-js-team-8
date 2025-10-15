@@ -322,6 +322,10 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
+  border-bottom: 1px solid rgba(11, 5, 0, 0.15);
+}
+.is-active#ac-2 > #ac-trigger-2 > button {
+  border-bottom: none;
 }
 
 /* .ac .ac-trigger {
