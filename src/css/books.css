@@ -27,6 +27,8 @@
   justify-content: space-between;
   align-items: center;
   /* gap: 12px; */
+
+  margin-bottom: 24px;
 }
 
 .category-title {
@@ -261,12 +263,14 @@
 
   .category-wraper {
     display: flex;
+    height: 43px;
+    margin-bottom: 32px;
   }
 
   .category-header-wraper {
     min-width: 455px;
-    height: 43px;
     padding-right: 24px;
+    margin-bottom: 0;
   }
   .category-title {
   }
