@@ -16,6 +16,9 @@
 .modal.is-open {
   display: flex;
 }
+body.modal-open {
+  overflow: hidden;
+}
 
 .modal-content {
   background: #fceee6;

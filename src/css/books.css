@@ -225,7 +225,14 @@
   font-size: 16px;
   background-color: #e15d05;
   cursor: pointer;
-  transition: opacity 0.2s ease, transform 0.1s ease;
+  transition: opacity 0.2s ease, transform 0.1s ease, border 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.load-more-button:hover,
+.load-more-button:focus {
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  background-color: transparent;
+  color: #000;
 }
 
 .load-more-button:active {

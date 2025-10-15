@@ -183,10 +183,30 @@
     transform 0.2s ease;
 }
 
+.events-swipe-btn-prev:hover,
+.events-swipe-btn-next:hover {
+  background-color: transparent;
+  border: 1px solid rgba(11, 5, 0, 0.15);
+
+}
+.events-swipe-btn-prev:hover svg,
+.events-swipe-btn-next:hover svg {
+  color: #111;
+  fill: #111;
+}
+
 .events-swipe-btn-prev svg,
 .events-swipe-btn-next svg {
   color: #fff;
   fill: #fff;
+}
+
+.events-swipe-btn-prev[disabled],
+.events-swipe-btn-next[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 @media (min-width: 768px) {
@@ -196,6 +216,10 @@
   .events-section .container {
   max-width: 768px;
   margin: 0 auto;
+
+}
+.events-slide-wrap {
+  max-width: 100%;
 
 }
 

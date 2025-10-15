@@ -57,3 +57,25 @@ swiper.on('afterInit', syncDisabled);
 swiper.on('slideChange', syncDisabled);
 swiper.on('update', syncDisabled);
 syncDisabled();
+
+
+
+// function syncDisabled() {
+//   const atStart = swiper.isBeginning;
+//   const atEnd = swiper.isEnd;
+
+
+//   prevBtn.toggleAttribute('disabled', atStart);
+//   nextBtn.toggleAttribute('disabled', atEnd);
+
+//   prevBtn.setAttribute('aria-disabled', String(atStart));
+//   nextBtn.setAttribute('aria-disabled', String(atEnd));
+// }
+
+// swiper.on('init', syncDisabled);           
+// swiper.on('slideChange', syncDisabled);    
+// swiper.on('update', syncDisabled);       
+// swiper.on('reachEnd', syncDisabled);      
+// swiper.on('reachBeginning', syncDisabled); 
+
+// swiper.init(); 
