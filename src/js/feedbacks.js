@@ -38,8 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
     rightArrow.classList.toggle('disabled', swiper.isEnd);
   }
 
-  leftArrow.addEventListener('click', () => swiper.slidePrev());
-  rightArrow.addEventListener('click', () => swiper.slideNext());
+  // leftArrow.addEventListener('click', () => swiper.slidePrev());
+  // rightArrow.addEventListener('click', () => swiper.slideNext());
+
+  leftArrow.addEventListener('click', () => {
+  swiper.slidePrev();
+  leftArrow.blur(); // знімає фокус
+});
+
+rightArrow.addEventListener('click', () => {
+  swiper.slideNext();
+  rightArrow.blur(); // знімає фокус
+});
 
   dots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
@@ -53,3 +63,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateControls();
 });
+
+
