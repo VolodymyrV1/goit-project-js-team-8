@@ -1,3 +1,6 @@
+import Swiper from 'swiper';
+import 'swiper/css';
+
 const heroSwiper = new Swiper('#hero-swiper', {
   slidesPerView: 1,
   loop: false,
