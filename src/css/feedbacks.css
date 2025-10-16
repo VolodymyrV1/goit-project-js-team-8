@@ -9,6 +9,9 @@
 
 }
 
+
+
+
 .section-title {
   margin-bottom: 24px;
   color: #1c1c1c;
@@ -226,3 +229,38 @@
     text-align: left;
   }
 }
+
+.feedback-text {
+  margin-bottom: 16px;
+}
+
+.profile {
+  margin-top: auto;
+}
+
+/* профіль завжди прилипає до низу */
+
+.feedback-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  /* десктоп/планшет */
+  overflow: hidden;
+}
+
+@media (max-width: 375px) {
+  .feedback-text {
+    -webkit-line-clamp: 4;
+  }
+}
+
+.feedback-cards .swiper-wrapper {
+  align-items: stretch;
+}
+
+.feedback-cards .swiper-slide {
+  height: auto;
+}
+
+/* висоту задає .card */
+

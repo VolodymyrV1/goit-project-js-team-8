@@ -15,11 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('open-register-modal', function () {
     modal.classList.add('is-open');
     document.body.classList.add('modal-open');
+    document.querySelector('body').style.overflow = 'hidden';
   });
 
   function closeModal() {
     modal.classList.remove('is-open');
     document.body.classList.remove('modal-open');
+    document.querySelector('body').style.overflow = 'auto';
     if (form) form.reset();
   }
 
