@@ -125,6 +125,15 @@
   flex-direction: column;
 }
 
+.books-img-wraper { 
+  transition: transform .3s ease;
+}
+
+
+.books-item-wraper:hover .books-img-wraper {
+  transform: translateY(-15px);
+}
+
 .books-list,
 .books-item-wraper,
 .category-list-wraper {
@@ -248,8 +257,9 @@
 
 @media (hover: hover) {
   .button-wraper button:hover {
-    background-color: #2b1f18;
-    color: #fff;
+    /* background-color: #2b1f18; */
+    background-color: #ea8d50;
+    color: #2b1f18;
     border-color: #2b1f18;
   }
 }

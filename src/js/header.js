@@ -20,12 +20,14 @@ const navLinks = document.querySelectorAll('.navbar-nav-link'); // усі пос
 openBtn.addEventListener('click', () => {
   menu.classList.add('is-open');
   document.body.classList.add('menu-open'); // блокує скрол сторінки
+  document.querySelector('body').style.overflow = 'hidden';
 });
 
 // Закрити меню по хрестику
 closeBtn.addEventListener('click', () => {
   menu.classList.remove('is-open');
   document.body.classList.remove('menu-open');
+  document.querySelector('body').style.overflow = 'auto';
 });
 
 // Закрити меню при кліку на будь-яке посилання
@@ -33,5 +35,6 @@ navLinks.forEach(link => {
   link.addEventListener('click', () => {
     menu.classList.remove('is-open');
     document.body.classList.remove('menu-open');
+    document.querySelector('body').style.overflow = 'auto';
   });
 });

@@ -45,15 +45,6 @@ body.menu-open {
     padding-right: var(--scrollbar-compensation, 0px);
 }
 
-/* body.menu-open {
-    overflow: hidden;
-}
-
-/* body.menu-open {
-    overflow: hidden;
-    height: 100vh;
-} */ */
-
 .header-logo:focus,
 .header-logo:hover {
     background-color: black;
@@ -63,6 +54,7 @@ body.menu-open {
 .header-logo:hover .header-logo-icon,
 .header-logo:focus .header-logo-icon {
     fill: #fff;
+   
 }
 
 
