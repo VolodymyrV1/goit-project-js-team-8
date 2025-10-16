@@ -237,6 +237,7 @@
   cursor: pointer;
   transition: opacity 0.2s ease, transform 0.1s ease, border 0.2s ease,
     background-color 0.2s ease, color 0.2s ease;
+    margin-bottom: 32px;
 }
 
 .load-more-button:hover,
