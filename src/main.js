@@ -9,5 +9,7 @@ import "./js/location";
 import "./js/footer";
 import "./js/book_modal_window";
 import "./js/contact_modal_window";
+import "./js/scroll_top";
+
 
 
