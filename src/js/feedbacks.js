@@ -1,12 +1,13 @@
 import Swiper from 'swiper';              // імпорт самої бібліотеки
 import 'swiper/css';                      // імпорт стилів swiper
+import { Keyboard, Mousewheel } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const swiper = new Swiper('.feedback-cards', {
+  const swiper = new Swiper('.swiper-feedbacks', {
+    modules: [Keyboard, Mousewheel],
     slidesPerView: 1,
     spaceBetween: 24,
-    // slidesPerGroup: 1, // <-- изменим ниже через breakpoints
-    speed: 600, // <-- более плавная прокрутка
+    speed: 600,
     keyboard: { enabled: true, onlyInViewport: true },
     mousewheel: true,
     simulateTouch: true,
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       1440: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 24 }
     }
   });
+
 
   const leftArrow = document.querySelector('.arrow.left');
   const rightArrow = document.querySelector('.arrow.right');
