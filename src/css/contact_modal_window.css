@@ -24,12 +24,12 @@ body.modal-open {
   background: #fceee6;
   border-radius: 8px;
   width: 100%;
-  /* max-width: 760px; */
+
   max-height: 704px;
   overflow-y: auto;
   position: relative;
   padding: 40px 20px;
-  /* min-width: 375px; */
+
   max-width: 343px;
   max-height: 704px;
 }

@@ -11,8 +11,15 @@
     display: none; 
   z-index: 1000;
   transition: opacity 0.3s, visibility 0.3s;
+  width: 48px;
+  height: 48px;
 }
 
 .scroll-top.show {
   display: block;
+}
+
+.scroll-top:hover {
+  background-color: transparent;
+  border: 1px solid rgba(11, 5, 0, 0.15);
 }

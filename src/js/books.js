@@ -201,6 +201,9 @@ if (loadMoreBtn) {
     );
     renderBooks();
     toggleLoadMoreButton();
+
+    // 👇 Знімає фокус, щоб кнопка не залипала
+    loadMoreBtn.blur();
   });
 }
 
@@ -229,3 +232,4 @@ function showLoader() {
 function hideLoader() {
   if (loader) loader.style.display = 'none';
 }
+

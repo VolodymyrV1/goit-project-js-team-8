@@ -69,6 +69,7 @@ body.menu-open {
     padding-bottom: 8px;
     border: none;
     background-color: transparent;
+    padding-right: 0;
 }
 
 .menu-icon {
@@ -100,12 +101,13 @@ body.menu-open {
         padding-top: 24px;
         padding-bottom: 24px;
 
-        transition: opacity 250ms;
+        transition: transform 250ms ease, opacity 250ms ease;
     }
 
     .header-nav-link:hover,
     .header-nav-link:focus {
         opacity: 0.5;
+        transform: translateY(-3px);
     }
 
 

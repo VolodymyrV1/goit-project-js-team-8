@@ -296,4 +296,8 @@
     font-size: 16px;
     padding: 12px 32px;
   }
+
+  .hero_btn:hover {
+    cursor: url('/img/favicon.svg'), pointer;
+  }
 }
