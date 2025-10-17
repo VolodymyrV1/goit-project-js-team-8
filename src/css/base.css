@@ -9,3 +9,24 @@ body {
   color: #0b0500;
 }
 
+
+
+
+button:hover {
+  cursor: url('/img/favicon.svg'), pointer;
+}
+
+a:hover {
+  cursor: url('/img/favicon.svg'), pointer;
+}
+
+@media screen and (min-width: 1440px) {
+  button:hover {
+  cursor: url('/img/favicon.svg'), pointer;
+}
+
+a:hover {
+  cursor: url('/img/favicon.svg'), pointer;
+}
+
+}

@@ -35,10 +35,9 @@ const accordion = new Accordion(accordionElms, {
   collapse: true,
   showMultiple: true,
   duration: 400,
-  //   elementClass: 'li-ac',
+
   triggerClass: 'ac-title',
-  //   panelClass: 'content-ac',
-  //   activeClass: 'ac-active',
+
   beforeOpen: currElement => {
     currElement.querySelector('.icon-ac-down').classList.add('rotate');
   },
