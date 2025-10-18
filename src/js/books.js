@@ -1,17 +1,17 @@
 import axios from 'axios'; // імпортуємо axios для запитів до API
 
-let allBooks = [];
-let visibleBooksCount = 0;
-const increment = 4;
-const loadMoreBtn = document.getElementById('load-more');
+let allBooks = []; // зберігаємо всі книги поточної категорії
+let visibleBooksCount = 0; // кількість книг, які зараз відображаються
+const increment = 4; // кількість карток, які додаються при натисканні "Show More"
+const loadMoreBtn = document.getElementById('load-more'); // кнопка "Show More"
 
 // елементи на сторінці
 const categoryListEl = document.getElementById('category-list'); // ul для категорій
 const booksListEl = document.getElementById('books-list'); // ul для книг
-const catagoryCountEl = document.getElementById('category-count'); // елемент для відображення кількості книг
-const loader = document.querySelector('.loader-back');
+const catagoryCountEl = document.getElementById('category-count'); // лічильник книг
+const loader = document.querySelector('.loader-back'); // прелоадер
 
-// функція завантаження категорій
+// ---------------- ФУНКЦІЯ ЗАВАНТАЖЕННЯ КАТЕГОРІЙ ----------------
 async function loadCategories() {
   if (!categoryListEl) return;
 
@@ -25,49 +25,48 @@ async function loadCategories() {
     // сортуємо категорії за алфавітом
     categories.sort((a, b) => a.list_name.localeCompare(b.list_name));
 
-    // додаємо пункт "All categories" на початок списку
+    // додаємо пункт "All categories" на початок
     const allCategories = [
       { list_name: 'All categories' },
       ...categories.filter(cat => cat.list_name && cat.list_name.trim() !== ''),
     ];
 
-    // створюємо розмітку категорій
+    // генеруємо HTML для категорій
     const markup = allCategories
       .map(({ list_name }) => `<li class="category-item">${list_name}</li>`)
       .join('');
 
-    // очищуємо список перед вставкою (щоб не дублювалось)
     categoryListEl.innerHTML = markup;
 
     // робимо першу категорію активною
     const firstCategory = categoryListEl.querySelector('.category-item');
     if (firstCategory) firstCategory.classList.add('active');
 
-    // Вибір категорії
+    // обробник кліку по категорії
     categoryListEl.addEventListener('click', e => {
       const li = e.target.closest('.category-item');
       if (!li) return;
 
-      // прибираємо активний стан у всіх
+      // знімаємо активність з усіх
       categoryListEl
         .querySelectorAll('.category-item')
         .forEach(item => item.classList.remove('active'));
 
-      // додаємо активний стан до натиснутої
+      // додаємо активність обраній
       li.classList.add('active');
 
       const category = li.textContent;
 
-      // завантажуємо книги вибраної категорії
+      // завантажуємо книги нової категорії
       loadBooksByCategory(category);
 
-      // Автоматично закриваємо список на мобільному після вибору
+      // закриваємо список на мобільній версії
       if (window.innerWidth < 1440) {
         categoryListEl.classList.remove('show');
       }
     });
 
-    // Кнопка розгортання категорій (мобільна версія)
+    // кнопка "Categories" для мобільного
     const dropdownBtn = document.querySelector('.dropdown-btn');
 
     if (dropdownBtn && categoryListEl) {
@@ -75,7 +74,7 @@ async function loadCategories() {
         categoryListEl.classList.toggle('show');
       });
 
-      // При зміні ширини вікна — скидаємо стан (щоб не зависло при ресайзі)
+      // при ресайзі — прибираємо відкриття
       window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
           categoryListEl.classList.remove('show');
@@ -83,20 +82,22 @@ async function loadCategories() {
       });
     }
 
-    // Завантажуємо всі книги за замовчуванням
+    // завантажуємо книги для "All categories" за замовчуванням
     loadBooksByCategory('All categories');
   } catch (error) {
     console.error('Помилка при завантаженні категорій:', error);
   }
 }
 
-// функція завантаження книг по категорії
+// ---------------- ФУНКЦІЯ ЗАВАНТАЖЕННЯ КНИГ ----------------
 async function loadBooksByCategory(category) {
   if (!booksListEl) return;
 
   try {
     showLoader();
     let url;
+
+    // формуємо URL залежно від категорії
     if (category === 'All categories') {
       url = 'https://books-backend.p.goit.global/books/top-books';
     } else {
@@ -108,12 +109,14 @@ async function loadBooksByCategory(category) {
     const response = await axios.get(url);
     let books = response.data;
 
+    // якщо "All categories" — плоский список
     if (category === 'All categories') {
       books = books.flatMap(item => item.books);
     } else {
       books = books.flat();
     }
 
+    // видаляємо дублікати
     books = books.filter(
       (book, index, self) =>
         index === self.findIndex(b => b.title === book.title)
@@ -121,14 +124,18 @@ async function loadBooksByCategory(category) {
 
     allBooks = books;
 
-    // Визначаємо початкову кількість книг залежно від ширини
+    // визначаємо початкову кількість карток
     const screenWidth = window.innerWidth;
     const initialCount = screenWidth < 1440 ? 10 : 24;
 
-    // Якщо зараз вже показано більше, залишаємо
+    // скидаємо поточну кількість видимих карток
     visibleBooksCount = Math.min(initialCount, allBooks.length);
 
-    renderBooks();
+    // 👉 очищаємо список перед першим рендером (НОВА КАТЕГОРІЯ)
+    booksListEl.innerHTML = '';
+
+    // викликаємо рендер тільки видимих карток
+    renderBooks(false); // false — щоб не перезаливати, а додавати
     toggleLoadMoreButton();
   } catch (error) {
     console.error('Помилка при завантаженні книг:', error);
@@ -137,9 +144,15 @@ async function loadBooksByCategory(category) {
   }
 }
 
-function renderBooks() {
-  booksListEl.innerHTML = '';
-  const booksToShow = allBooks.slice(0, visibleBooksCount);
+// ---------------- ФУНКЦІЯ РЕНДЕРУ КНИГ ----------------
+function renderBooks(append = false) {
+  // ⚡ append = false => очищуємо список (нове завантаження категорії)
+  // ⚡ append = true => додаємо до наявних (при Show More)
+
+  const booksToShow = allBooks.slice(
+    append ? booksListEl.children.length : 0, // якщо додаємо — починаємо з останнього індексу
+    visibleBooksCount
+  );
 
   const markup = booksToShow
     .map(book => {
@@ -176,13 +189,36 @@ function renderBooks() {
     })
     .join('');
 
-  booksListEl.insertAdjacentHTML('beforeend', markup);
+  // 🟢 якщо append === true — додаємо в кінець, інакше — перезаписуємо список
+  if (append) {
+    booksListEl.insertAdjacentHTML('beforeend', markup);
+  } else {
+    booksListEl.innerHTML = markup;
+  }
 
+  // оновлюємо лічильник
   if (catagoryCountEl) {
-    catagoryCountEl.textContent = `Showing ${booksToShow.length} з ${allBooks.length}`;
+    catagoryCountEl.textContent = `Показано ${booksListEl.children.length} з ${allBooks.length}`;
   }
 }
 
+// ---------------- КНОПКА "SHOW MORE" ----------------
+if (loadMoreBtn) {
+  loadMoreBtn.addEventListener('click', () => {
+    // додаємо нові картки, не очищаючи попередні
+    visibleBooksCount = Math.min(
+      visibleBooksCount + increment,
+      allBooks.length
+    );
+
+    renderBooks(true); // 👉 true — додаємо, а не перерендерюємо все
+    toggleLoadMoreButton();
+
+    loadMoreBtn.blur(); // знімаємо фокус
+  });
+}
+
+// ---------------- ПОКАЗ/ПРИХОВАННЯ КНОПКИ ----------------
 function toggleLoadMoreButton() {
   if (!loadMoreBtn) return;
   if (visibleBooksCount >= allBooks.length) {
@@ -190,23 +226,14 @@ function toggleLoadMoreButton() {
   } else {
     loadMoreBtn.style.display = 'block';
   }
+
+  // оновлюємо текст лічильника
+  if (catagoryCountEl) {
+    catagoryCountEl.textContent = `Показано ${visibleBooksCount} з ${allBooks.length}`;
+  }
 }
 
-// кнопка Show More
-if (loadMoreBtn) {
-  loadMoreBtn.addEventListener('click', () => {
-    visibleBooksCount = Math.min(
-      visibleBooksCount + increment,
-      allBooks.length
-    );
-    renderBooks();
-    toggleLoadMoreButton();
-
-    // 👇 Знімає фокус, щоб кнопка не залипала
-    loadMoreBtn.blur();
-  });
-}
-
+// ---------------- ОБРОБКА РЕСАЙЗУ ----------------
 window.addEventListener('resize', () => {
   if (!allBooks.length) return;
 
@@ -215,21 +242,20 @@ window.addEventListener('resize', () => {
 
   if (visibleBooksCount < newInitial) {
     visibleBooksCount = Math.min(newInitial, allBooks.length);
-    renderBooks();
+    renderBooks(false); // при ресайзі — оновлюємо список
     toggleLoadMoreButton();
   }
 });
 
-// чекаємо завантаження DOM
+// ---------------- ПРИ ЗАВАНТАЖЕННІ DOM ----------------
 document.addEventListener('DOMContentLoaded', () => {
   loadCategories();
 });
 
+// ---------------- ЛОАДЕР ----------------
 function showLoader() {
   if (loader) loader.style.display = 'flex';
 }
-
 function hideLoader() {
   if (loader) loader.style.display = 'none';
 }
-
